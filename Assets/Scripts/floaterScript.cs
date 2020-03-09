@@ -15,12 +15,13 @@ public class floaterScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //ground check
-        if(Physics.Raycast(transform.position, new Vector3(0, -1, 0), floatHeight))
+        if (Physics.Raycast(transform.position, Vector3.down, out var hit, floatHeight))
         {
-            rb.AddForce(transform.up * floatForce, ForceMode.Force);
+            var proportion = Mathf.Pow(1 - hit.distance / floatHeight, 3);
+            rb.AddForce(hit.normal * floatForce * proportion * Time.deltaTime, ForceMode.Impulse);
         }
     }
 }

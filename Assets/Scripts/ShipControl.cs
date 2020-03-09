@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class ShipControl : MonoBehaviour
 {
+    public int playerNum;
     Rigidbody rb;
-    public float accelSpeed, turnSpeed;
+    public float accelSpeed, turnSpeed, brakeDrag;
+    public string accelName, horizontalName;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        accelName = playerNum + "PAccelerate";
+        horizontalName = playerNum + "PHorizontal";
     }
 
     private void Update()
     {
-        if (Input.GetAxis("Accelerate") != 0)
+        if (Input.GetAxis(accelName) > 0)
         {
-            rb.AddForce(transform.forward * (Input.GetAxis("Accelerate") * accelSpeed), ForceMode.Force);
+            rb.AddForce(transform.forward * (Input.GetAxis(accelName) * accelSpeed), ForceMode.Force);
+            
         }
-        rb.AddTorque(transform.up * (turnSpeed * Input.GetAxis("Horizontal")));
+        if (Input.GetAxis(accelName) < 0)
+        {
+            rb.drag = brakeDrag;
+        }
+        else
+        {
+            rb.drag = 1;
+        }
+        rb.AddTorque(transform.up * (turnSpeed * Input.GetAxis(horizontalName)));
 
     }
 }
