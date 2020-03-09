@@ -6,25 +6,25 @@ using UnityEngine;
 public class TrackSection: ScriptableObject
 {
     public GameObject prefab;
-    public float length;
-    public float difficulty;
+    public float weight;
     public GameObject CreateSection(GameObject origin)
     {
         GameObject g = Instantiate(prefab, origin.transform.position, origin.transform.rotation);
-        Transform end = g.transform.GetChild(1);
-        Transform start = g.transform.GetChild(0);
-        GameObject hitbox = g.transform.GetChild(4).gameObject;
-
+        SectionData data = g.GetComponent<SectionData>();
+        Transform end = data.end;
+        Transform start = data.start;
+        Transform hitbox = data.hitbox;
+        data.trackCollider.enabled = false;
         FlipSectionRandom(g);
         
-        if(Physics.CheckBox(hitbox.transform.position, hitbox.transform.localScale/2, hitbox.transform.rotation))
+        if(Physics.CheckBox(hitbox.position, hitbox.localScale/2, hitbox.rotation))
         { 
             Destroy(g);
             return origin; //This is returned if the track would overlap
         }
         else
         {
-            g.transform.GetChild(3).gameObject.GetComponent<MeshCollider>().enabled = true;
+            data.trackCollider.enabled = true;
             return end.gameObject;
         }
     }

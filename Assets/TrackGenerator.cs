@@ -8,7 +8,7 @@ public class TrackGenerator : MonoBehaviour
     int stepsBack = 0;
     public TrackSection[] sections;
     GameObject origin;
-    List<GameObject> buildPoints = new List<GameObject>(); 
+    List<GameObject> buildPoints = new List<GameObject>();
     private void Start()
     {
         origin = gameObject;
@@ -16,39 +16,68 @@ public class TrackGenerator : MonoBehaviour
     }
     IEnumerator BuildTrack()
     {
-        while (pieceCount>0)
+        while (pieceCount > 0)
         {
             bool success = false;
-            for(int reattempt = 6; reattempt > 0; reattempt--) //Need to put in alternative if fails every time;
+            for (int reattempt = 6; reattempt > 0; reattempt--) //Need to put in alternative if fails every time;
             {
                 yield return new WaitForSeconds(0.01f);
-                int pick = Random.Range(0, sections.Length);
+                //int pick = Random.Range(0, sections.Length);
                 GameObject oldOrigin = origin;
-                origin = sections[pick].CreateSection(origin);
+
+
+                origin = GetRandomSection().CreateSection(origin);
                 if (origin != oldOrigin)
                 {
                     SuccessfulPlacement();
                     success = true;
                     break;
-                }        
+                }
             }
             if (!success)
-            { 
+            {
                 StepBack();
             }
         }
     }
+
+    public TrackSection GetRandomSection()
+    {
+        float random = Random.Range(0f, 1f);
+        float totalWeight = 0;
+        float currentWeight = 0;
+        foreach (TrackSection t in sections)
+        {
+            totalWeight += t.weight;
+        }
+
+        foreach (TrackSection t in sections)
+        {
+            float upper = currentWeight + (t.weight / totalWeight);
+            float floor = currentWeight;
+
+            if (random >= floor && random < upper)
+            {
+                return t;
+            }
+            currentWeight += t.weight / totalWeight;
+        }
+        Debug.Log("failed to select a section");
+        return null;
+    }
+
 
     void SuccessfulPlacement()
     {
         if (stepsBack > 0)
             stepsBack--;
         buildPoints.Add(origin);
+        pieceCount--;
     }
 
     void StepBack()
     {
-        stepsBack += 2;
+        stepsBack += 3;
         for (int i = stepsBack; i>0; i--)
         {
             GameObject old = buildPoints[buildPoints.Count - 1];

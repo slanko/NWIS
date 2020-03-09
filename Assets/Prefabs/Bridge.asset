@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Bridge
   m_EditorClassIdentifier: 
   prefab: {fileID: 2379275460796539220, guid: 3c663ce18dac92b4189252fdd44d5549, type: 3}
-  length: 0
-  difficulty: 0
+  weight: 0.5
