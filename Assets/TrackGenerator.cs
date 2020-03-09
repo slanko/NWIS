@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TrackGenerator : MonoBehaviour
 {
-    public int iterations = 20;
+    public int pieceCount = 20;
+    int stepsBack = 0;
     public TrackSection[] sections;
     GameObject origin;
-
+    List<GameObject> buildPoints = new List<GameObject>(); 
     private void Start()
     {
         origin = gameObject;
@@ -15,33 +16,45 @@ public class TrackGenerator : MonoBehaviour
     }
     IEnumerator BuildTrack()
     {
-        for(int i = iterations; i >0; i--)
+        while (pieceCount>0)
         {
             bool success = false;
-            for(int reattempt = 8; reattempt > 0; reattempt--) //Need to put in alternative if fails every time;
+            for(int reattempt = 6; reattempt > 0; reattempt--) //Need to put in alternative if fails every time;
             {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.01f);
                 int pick = Random.Range(0, sections.Length);
-                Debug.Log(pick);
                 GameObject oldOrigin = origin;
                 origin = sections[pick].CreateSection(origin);
                 if (origin != oldOrigin)
                 {
-                    Debug.Log("Built");
+                    SuccessfulPlacement();
                     success = true;
                     break;
-                }
-                    
+                }        
             }
             if (!success)
-            {
-                GameObject parent = origin.transform.parent.gameObject;
-                origin = new GameObject();
-                origin.transform.position = parent.transform.position;
-                origin.transform.rotation = parent.transform.rotation;
-                Destroy(parent);
+            { 
+                StepBack();
             }
-            
+        }
+    }
+
+    void SuccessfulPlacement()
+    {
+        if (stepsBack > 0)
+            stepsBack--;
+        buildPoints.Add(origin);
+    }
+
+    void StepBack()
+    {
+        stepsBack += 2;
+        for (int i = stepsBack; i>0; i--)
+        {
+            GameObject old = buildPoints[buildPoints.Count - 1];
+            buildPoints.Remove(old);
+            Destroy(old.transform.parent.gameObject);
+            origin = buildPoints[buildPoints.Count - 1];
         }
     }
 }
