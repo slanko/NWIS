@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
-  m_Name: Right
+  m_Name: Bridge
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8027706008916420275, guid: 9d4826afa8157f0468c7fb961b9ca87e, type: 3}
-  length: 10
-  difficulty: 7
+  prefab: {fileID: 2379275460796539220, guid: 3c663ce18dac92b4189252fdd44d5549, type: 3}
+  length: 0
+  difficulty: 0

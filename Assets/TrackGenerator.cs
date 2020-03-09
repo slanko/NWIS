@@ -20,7 +20,7 @@ public class TrackGenerator : MonoBehaviour
             bool success = false;
             for(int reattempt = 8; reattempt > 0; reattempt--) //Need to put in alternative if fails every time;
             {
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(0.1f);
                 int pick = Random.Range(0, sections.Length);
                 Debug.Log(pick);
                 GameObject oldOrigin = origin;
