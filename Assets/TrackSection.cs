@@ -16,18 +16,18 @@ public class TrackSection: ScriptableObject
         Transform start = g.transform.GetChild(0);
         float distance = Vector3.Distance(start.position, end.position)/2;
 
-        Rigidbody rb = g.AddComponent<Rigidbody>();
-        rb.isKinematic = true;
-        RaycastHit hit;
-        rb.SweepTest(Vector3.zero, out hit);
-        if (hit.collider != null)
-        {
+        
+        BoxCollider b = g.transform.GetChild(4).GetComponent<BoxCollider>();
+        if(Physics.CheckBox(b.transform.position, b.size/2, b.transform.rotation))
+        { 
             Destroy(g);
+            Debug.Log("Fail");
             return origin; //This is returned if the track would overlap
         }
         else
         {
-            Destroy(rb);
+            Debug.Log("Success");
+            g.transform.GetChild(3).gameObject.GetComponent<MeshCollider>().enabled = true;
             return end.gameObject;
         }
     }

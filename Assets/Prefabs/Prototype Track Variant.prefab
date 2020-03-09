@@ -40,10 +40,24 @@ BoxCollider:
   m_GameObject: {fileID: 1491623119881260916}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2.106925, y: 1.7357025, z: 8.186773}
-  m_Center: {x: -0.054728508, y: 0.36785126, z: 6.8660536}
+  m_Size: {x: 2.106925, y: 1.7357025, z: 11.725094}
+  m_Center: {x: -0.054728508, y: 0.36785126, z: 8.635214}
+--- !u!64 &6218168578000246629
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214573935346892782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2150044562243273127, guid: 7d5a102336643a04485367f3899ea5bb, type: 3}
 --- !u!1001 &8283755967813561769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54,22 +68,22 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 7d5a102336643a04485367f3899ea5bb,
         type: 3}
       propertyPath: m_Name
-      value: Prototype Track
+      value: Prototype Track Variant
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7d5a102336643a04485367f3899ea5bb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -14.647814
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7d5a102336643a04485367f3899ea5bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.606119
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7d5a102336643a04485367f3899ea5bb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.6686292
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7d5a102336643a04485367f3899ea5bb,
         type: 3}
@@ -116,6 +130,12 @@ PrefabInstance:
 --- !u!4 &4003529538567210675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7d5a102336643a04485367f3899ea5bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8283755967813561769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5214573935346892782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4996687211566984633, guid: 7d5a102336643a04485367f3899ea5bb,
     type: 3}
   m_PrefabInstance: {fileID: 8283755967813561769}
   m_PrefabAsset: {fileID: 0}
