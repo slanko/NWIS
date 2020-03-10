@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 90 Bend
   m_EditorClassIdentifier: 
   prefab: {fileID: 7476904990581617095, guid: cb285cee49d7c0e469a3dc72f7b34e1d, type: 3}
-  weight: 20
+  weight: 5

@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736753cdde8adda489a68e810c4ddbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceCount: 200000
+  pieceCount: 100
   sections:
   - {fileID: 11400000, guid: d3a3f7d2404d27d49b3fd3ff18cce97d, type: 2}
   - {fileID: 11400000, guid: a5405488ae0a9a74d86c14ade1b3c04b, type: 2}

@@ -71,11 +71,6 @@ public class TrackGenerator : MonoBehaviour
     
     void SuccessfulPlacement()
     {
-
-        if (stepsBack > -1)
-        {
-            stepsBack--;
-        }
         buildPoints.Add(origin);
         pieceCount--;
         if(lastCount <buildPoints.Count)
@@ -87,8 +82,9 @@ public class TrackGenerator : MonoBehaviour
 
     void StepBack()
     {
-        stepBackAmount++;
-        stepsBack +=stepBackAmount;
+        int dif = (lastCount - buildPoints.Count);
+        stepBackAmount+=1;
+        int stepsBack = stepBackAmount - dif;
         for (int i = stepsBack; i>0; i--)
         {
             GameObject old = buildPoints[buildPoints.Count - 1];

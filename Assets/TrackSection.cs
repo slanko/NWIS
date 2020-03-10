@@ -9,6 +9,7 @@ public class TrackSection: ScriptableObject
     public float weight;
     public GameObject CreateSection(GameObject origin)
     {
+        
         GameObject g = Instantiate(prefab, origin.transform.position, origin.transform.rotation);
         SectionData data = g.GetComponent<SectionData>();
         Transform end = data.end;
