@@ -328,7 +328,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5405488ae0a9a74d86c14ade1b3c04b, type: 2}
   - {fileID: 11400000, guid: da95a86ff6faaeb43aacb649cb270dc5, type: 2}
   - {fileID: 11400000, guid: d3a3f7d2404d27d49b3fd3ff18cce97d, type: 2}
-  escapeSections: []
+  - {fileID: 11400000, guid: 8b79f919cea553a45824edfd00b83189, type: 2}
+  escapeSections:
+  - {fileID: 11400000, guid: a8a6469639bf8644889727b3fdec658d, type: 2}
   start: {fileID: 11400000, guid: 1235be447d3485942a2b29d2f1f92684, type: 2}
   end: {fileID: 11400000, guid: f0c995171c706b6438a3635d783cb085, type: 2}
 --- !u!4 &1744347581

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
   m_Name: Up
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  weight: 0
+  prefab: {fileID: 9194458723290882902, guid: 006c40b949cad334e93967cbe82ac813, type: 3}
+  weight: 20
+  heightChange: 1
