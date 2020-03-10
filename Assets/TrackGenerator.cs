@@ -6,6 +6,8 @@ public class TrackGenerator : MonoBehaviour
 {
     public int pieceCount = 20;
     int stepsBack = 0;
+    int stepBackAmount = 0;
+    int lastCount = 0;
     public TrackSection[] sections;
     GameObject origin;
     List<GameObject> buildPoints = new List<GameObject>();
@@ -21,7 +23,7 @@ public class TrackGenerator : MonoBehaviour
             bool success = false;
             for (int reattempt = 6; reattempt > 0; reattempt--) //Need to put in alternative if fails every time;
             {
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.0001f);
                 //int pick = Random.Range(0, sections.Length);
                 GameObject oldOrigin = origin;
 
@@ -66,18 +68,27 @@ public class TrackGenerator : MonoBehaviour
         return null;
     }
 
-
+    
     void SuccessfulPlacement()
     {
-        if (stepsBack > 0)
+
+        if (stepsBack > -1)
+        {
             stepsBack--;
+        }
         buildPoints.Add(origin);
         pieceCount--;
+        if(lastCount <buildPoints.Count)
+        {
+            lastCount = buildPoints.Count;
+            stepBackAmount = 0;
+        }
     }
 
     void StepBack()
     {
-        stepsBack += 3;
+        stepBackAmount++;
+        stepsBack +=stepBackAmount;
         for (int i = stepsBack; i>0; i--)
         {
             GameObject old = buildPoints[buildPoints.Count - 1];
