@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
   m_Name: Curve45
   m_EditorClassIdentifier: 
-  prefab: {fileID: 676301023320665124, guid: 04614618ebe63e74aaeb8d1b9b875c4e, type: 3}
+  prefab: {fileID: 8236763515621404394, guid: 5fc417bb53eb0964c8d7bdfa0c9ec978, type: 3}
   weight: 20

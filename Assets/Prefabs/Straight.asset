@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
   m_Name: Straight
   m_EditorClassIdentifier: 
-  prefab: {fileID: 131797632938144928, guid: 9c34a1d7409c94e41aea7108048bdb08, type: 3}
+  prefab: {fileID: 2602788550013905474, guid: 34d56130c0e02e64f813e47828a8af07, type: 3}
   weight: 15

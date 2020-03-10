@@ -7,8 +7,14 @@ public class TrackSection: ScriptableObject
 {
     public GameObject prefab;
     public float weight;
+    public int heightChange;
     public GameObject CreateSection(GameObject origin)
     {
+        
+        if (TrackGenerator.height - heightChange < 0)
+        {
+            return origin;
+        }
         
         GameObject g = Instantiate(prefab, origin.transform.position, origin.transform.rotation);
         SectionData data = g.GetComponent<SectionData>();
@@ -25,6 +31,7 @@ public class TrackSection: ScriptableObject
         }
         else
         {
+            TrackGenerator.height += heightChange;
             data.trackCollider.enabled = true;
             return end.gameObject;
         }

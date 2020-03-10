@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
-  m_Name: Bridge
+  m_Name: StartLine
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2379275460796539220, guid: 3c663ce18dac92b4189252fdd44d5549, type: 3}
-  weight: 0.5
+  prefab: {fileID: 2781057114060205320, guid: 2a0bbd57182990a41824ee7efb029eb6, type: 3}
+  weight: 0
