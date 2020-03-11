@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class TrackGenerator : MonoBehaviour
 {
     public static int height = 0;
@@ -10,14 +10,17 @@ public class TrackGenerator : MonoBehaviour
     int stepBackAmount = 0;
     int lastCount = 0;
     public List<TrackSection> sections = new List<TrackSection>();
-    public List<TrackSection> escapeSections = new List<TrackSection>();
+    public List<TrackSection> upSections = new List<TrackSection>();
+    public List<TrackSection> downSections = new List<TrackSection>();
     public TrackSection start;
     public TrackSection end;
     GameObject origin;
     List<GameObject> buildPoints = new List<GameObject>();
+    List<TrackSection> placedSections = new List<TrackSection>();
     bool success = false;
     private void Start()
     {
+        height = 0;
         origin = gameObject;
         Place(start);
         StartCoroutine(BuildTrack());
@@ -34,7 +37,7 @@ public class TrackGenerator : MonoBehaviour
                 success = Place(sectionToPlace);
                 if (success)
                 {
-                    SuccessfulPlacement();
+                    SuccessfulPlacement(sectionToPlace);
                     break;
                 }
             }
@@ -44,6 +47,7 @@ public class TrackGenerator : MonoBehaviour
             }
         }
         Place(end);
+        TrackCompleted.complete();
     }
 
     public bool Place(TrackSection piece)
@@ -56,16 +60,16 @@ public class TrackGenerator : MonoBehaviour
     public TrackSection GetRandomSection()
     {
         List<TrackSection> sectionsToChooseFrom = new List<TrackSection>();
-        if(success)
+        sectionsToChooseFrom.AddRange(sections);
+        if (height < 10)
         {
-            sectionsToChooseFrom.AddRange(sections);
+            sectionsToChooseFrom.AddRange(upSections);
         }
-        else
+        if (height > 0)
         {
-            sectionsToChooseFrom.AddRange(sections);
-            sectionsToChooseFrom.AddRange(escapeSections);
-        }
+            sectionsToChooseFrom.AddRange(downSections);
 
+        }
         float random = Random.Range(0f, 1f);
         float totalWeight = 0;
         float currentWeight = 0;
@@ -90,8 +94,9 @@ public class TrackGenerator : MonoBehaviour
     }
 
     
-    void SuccessfulPlacement()
+    void SuccessfulPlacement(TrackSection section)
     {
+        placedSections.Add(section);
         buildPoints.Add(origin);
         pieceCount--;
         if(lastCount <buildPoints.Count)
@@ -108,6 +113,8 @@ public class TrackGenerator : MonoBehaviour
         int stepsBack = stepBackAmount - dif;
         for (int i = stepsBack; i>0; i--)
         {
+            height -= placedSections[placedSections.Count - 1].heightChange;
+            placedSections.RemoveAt(placedSections.Count - 1);
             GameObject old = buildPoints[buildPoints.Count - 1];
             buildPoints.Remove(old);
             Destroy(old.transform.parent.gameObject);

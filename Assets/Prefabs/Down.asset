@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Down
   m_EditorClassIdentifier: 
   prefab: {fileID: 1637907602446861543, guid: 058e9bcf884b4e8468b0b9d3a2dc37bc, type: 3}
-  weight: 1
+  weight: 2
   heightChange: -1

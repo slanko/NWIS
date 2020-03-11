@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
-  m_Name: Curve45
+  m_Name: 22.5 Bend
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8236763515621404394, guid: 5fc417bb53eb0964c8d7bdfa0c9ec978, type: 3}
-  weight: 20
+  prefab: {fileID: 2714838514902123756, guid: b83be4970610871469850481e855674b, type: 3}
+  weight: 10
+  heightChange: 0

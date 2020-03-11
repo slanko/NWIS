@@ -16,6 +16,21 @@ MonoBehaviour:
   start: {fileID: 2249674211428374125}
   end: {fileID: 2917399358327377402}
   hitbox: {fileID: 55391725227819610}
+--- !u!114 &2901245847127573894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2602788550013905474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e490796c444293d41abd9f009e3045b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildPoints:
+  - {fileID: 2249674211428374125}
+  pillar: {fileID: -927199367670048503, guid: 2aa329a2d4b501440a77b99f6b891575, type: 3}
 --- !u!64 &518533264413939079
 MeshCollider:
   m_ObjectHideFlags: 0
