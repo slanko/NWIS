@@ -61,7 +61,7 @@ public class TrackGenerator : MonoBehaviour
     {
         List<TrackSection> sectionsToChooseFrom = new List<TrackSection>();
         sectionsToChooseFrom.AddRange(sections);
-        if (height < 10)
+        if (height < 2)
         {
             sectionsToChooseFrom.AddRange(upSections);
         }
