@@ -15,3 +15,5 @@ MonoBehaviour:
   prefab: {fileID: 1637907602446861543, guid: 058e9bcf884b4e8468b0b9d3a2dc37bc, type: 3}
   weight: 2
   heightChange: -1
+  difficulty: 0.5
+  likelihood: 0.5710755

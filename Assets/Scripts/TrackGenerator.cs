@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 public class TrackGenerator : MonoBehaviour
 {
+    public AnimationCurve difficulty;
     public static int height = 0;
-    public int pieceCount = 20;
-    int stepsBack = 0;
+    public int totalSections;
+    int pieceCount;
     int stepBackAmount = 0;
     int lastCount = 0;
     public List<TrackSection> sections = new List<TrackSection>();
@@ -20,6 +21,7 @@ public class TrackGenerator : MonoBehaviour
     bool success = false;
     private void Start()
     {
+        pieceCount = totalSections;
         height = 0;
         origin = gameObject;
         Place(start);
@@ -30,10 +32,18 @@ public class TrackGenerator : MonoBehaviour
     {
         while (pieceCount > 0)
         {
-            for (int reattempt = 6; reattempt > 0; reattempt--) //Need to put in alternative if fails every time;
+            for (int reattempt = 6; reattempt > 0; reattempt--)
             {
                 yield return new WaitForSeconds(0.0001f);
-                TrackSection sectionToPlace = GetRandomSection();
+                TrackSection sectionToPlace;
+                if (pieceCount == 1)
+                {
+                    sectionToPlace = end;
+                }
+                else
+                {
+                    sectionToPlace = GetRandomSection();
+                }
                 success = Place(sectionToPlace);
                 if (success)
                 {
@@ -46,7 +56,6 @@ public class TrackGenerator : MonoBehaviour
                 StepBack();
             }
         }
-        Place(end);
         TrackCompleted.complete();
     }
 
@@ -59,6 +68,8 @@ public class TrackGenerator : MonoBehaviour
 
     public TrackSection GetRandomSection()
     {
+        float currentDifficulty = difficulty.Evaluate((totalSections - pieceCount)/(float)totalSections);
+        Debug.Log(currentDifficulty + "Input is:"+ (totalSections - pieceCount) / (float)totalSections);
         List<TrackSection> sectionsToChooseFrom = new List<TrackSection>();
         sectionsToChooseFrom.AddRange(sections);
         if (height < 2)
@@ -75,19 +86,20 @@ public class TrackGenerator : MonoBehaviour
         float currentWeight = 0;
         foreach (TrackSection t in sectionsToChooseFrom)
         {
-            totalWeight += t.weight;
+            t.likelihood =1- Mathf.Abs(t.difficulty - currentDifficulty);
+            totalWeight += t.weight*t.likelihood;
         }
 
         foreach (TrackSection t in sectionsToChooseFrom)
         {
-            float upper = currentWeight + (t.weight / totalWeight);
+            float upper = currentWeight + (t.weight*t.likelihood / totalWeight);
             float floor = currentWeight;
 
             if (random >= floor && random < upper)
             {
                 return t;
             }
-            currentWeight += t.weight / totalWeight;
+            currentWeight += t.weight*t.likelihood / totalWeight;
         }
         Debug.Log("failed to select a section");
         return null;

@@ -8,6 +8,8 @@ public class TrackSection: ScriptableObject
     public GameObject prefab;
     public float weight;
     public int heightChange;
+    public float difficulty;
+    [HideInInspector] public float likelihood;
     public GameObject CreateSection(GameObject origin)
     {
         

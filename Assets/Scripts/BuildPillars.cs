@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildPillars : TrackPiece
+public class BuildPillars : MonoBehaviour
 {
     [SerializeField] Transform[] buildPoints;
     [SerializeField] GameObject pillar;

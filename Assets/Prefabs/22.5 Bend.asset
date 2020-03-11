@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: 22.5 Bend
   m_EditorClassIdentifier: 
   prefab: {fileID: 2714838514902123756, guid: b83be4970610871469850481e855674b, type: 3}
-  weight: 10
+  weight: 5
   heightChange: 0
+  difficulty: 0.4
+  likelihood: 0.67107546

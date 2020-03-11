@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1600249112236825479, guid: ba42c7878a2fb3145a6f31503a3857fe, type: 3}
   weight: 5
+  heightChange: 0
+  difficulty: 0.9
+  likelihood: 0.17107552
