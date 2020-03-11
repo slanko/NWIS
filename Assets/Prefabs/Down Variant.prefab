@@ -112,6 +112,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 5554455689802034000, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2, type: 3}
 --- !u!4 &8033156472812623356 stripped
@@ -131,6 +136,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Down Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: da0cfc44458c5bc46ad66b9bba95c8ce,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890935388186879994, guid: da0cfc44458c5bc46ad66b9bba95c8ce,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545805171377572875, guid: da0cfc44458c5bc46ad66b9bba95c8ce,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272201399377395766, guid: da0cfc44458c5bc46ad66b9bba95c8ce,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -4996687211566984633, guid: da0cfc44458c5bc46ad66b9bba95c8ce,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: da0cfc44458c5bc46ad66b9bba95c8ce,
         type: 3}
