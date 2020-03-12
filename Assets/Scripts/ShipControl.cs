@@ -6,7 +6,8 @@ public class ShipControl : MonoBehaviour
 {
     public int playerNum;
     Rigidbody rb;
-    public float accelSpeedBase, accelSpeedTweaked, turnSpeed, brakeDrag, xDragDiv;
+    public float accelSpeedBase, accelSpeedTweaked, turnSpeed, brakeDrag, xDragDiv, controlHeight;
+    public Vector3 localVelocity;
     public string accelName, horizontalName;
     // Start is called before the first frame update
     void Start()
@@ -16,11 +17,12 @@ public class ShipControl : MonoBehaviour
         horizontalName = playerNum + "PHorizontal";
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        //input/acceleration and turning script
         if (Input.GetAxis(accelName) > 0)
         {
-            rb.AddForce(transform.forward * (Input.GetAxis(accelName) * accelSpeedTweaked), ForceMode.Force);
+            rb.AddForce(transform.forward * (Input.GetAxis(accelName) * accelSpeedBase), ForceMode.Force);
             
         }
         if (Input.GetAxis(accelName) < 0)
@@ -33,20 +35,25 @@ public class ShipControl : MonoBehaviour
         }
         rb.AddTorque(transform.up * (turnSpeed * Input.GetAxis(horizontalName)));
 
-        //sideways drag stuff
-        var vel = rb.velocity;
-        var velFlat = new Vector3(vel.x, 0, vel.z).normalized;
-        var forward = rb.transform.forward;
-        var angle = Vector3.Angle(forward, velFlat);
-        if(angle > 10)
+        //distance from track check
+        var localVel = transform.InverseTransformDirection(rb.velocity);
+
+        localVel.x = localVel.x / xDragDiv;
+        localVelocity = new Vector3(localVel.x, localVel.y, localVel.z);
+        rb.velocity = transform.TransformDirection(localVel);
+
+        if (Physics.Raycast(transform.position, Vector3.down, out var hit, controlHeight))
         {
-            rb.drag = angle / xDragDiv;
-            if(rb.drag < 1f)
-            {
-                rb.drag = 1;
-            }
-            accelSpeedTweaked = accelSpeedBase + angle;
+            var up = hit.normal;
+            var localUp = rb.transform.up;
+
+            // torque localUp toward up
+
+            rb.AddForceAtPosition(up * Time.deltaTime, localUp * 10, ForceMode.Impulse);
+            rb.AddForceAtPosition(-up * Time.deltaTime, localUp * -10, ForceMode.Impulse);
         }
+
+
 
     }
 }
