@@ -21,13 +21,11 @@ public class SceneryPlacer : MonoBehaviour
     IEnumerator PlaceScenery()
     {
         foreach(GameObject g in sceneryPoints) {
-            if (Random.Range(0, 5) == 0)
-            {
+
                 yield return new WaitForSeconds(0.0001f);
                 GameObject objToPlace = GetRandomSection();
 
                 Place(objToPlace, g);
-            }
         }
     }
 
@@ -35,17 +33,27 @@ public class SceneryPlacer : MonoBehaviour
     {
         Transform hitbox = objToPlace.GetComponent<Scenery>().hitbox;
         Vector3 spawnPoint = point.transform.position;
-        for(int i = 10; i > 0; i--)
+        for(int i = 50; i > 0; i--)
         {
-            if (Physics.CheckBox(spawnPoint, hitbox.localScale *0.6f, point.transform.rotation))
+            if (Random.Range(0, 80) == 0)
             {
-                
-                spawnPoint = spawnPoint + (point.transform.forward*2);
+                if (Physics.CheckBox(spawnPoint, hitbox.localScale * 0.6f, point.transform.rotation))
+                {
+
+                    spawnPoint = spawnPoint + (point.transform.forward * 8);
+                }
+                else
+                {
+
+                    Instantiate(objToPlace, spawnPoint, point.transform.rotation); //this is default rotation for now
+                    objToPlace = GetRandomSection();
+                    hitbox = objToPlace.GetComponent<Scenery>().hitbox;
+
+                }
             }
             else
             {
-                Instantiate(objToPlace, spawnPoint, point.transform.rotation); //this is default rotation for now
-                break;
+                spawnPoint = spawnPoint + (point.transform.forward * 8);
             }
         }
     }

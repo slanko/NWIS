@@ -20,8 +20,10 @@ public class TrackSection: ScriptableObject
         Transform hitbox = data.hitbox;
         data.trackCollider.enabled = false;
         FlipSectionRandom(g);
-        
-        if(Physics.CheckBox(hitbox.position, hitbox.localScale/2, hitbox.rotation))
+
+        Vector3 hitBoxScale = hitbox.localScale;
+        Debug.Log(g.transform.localScale);
+        if(Physics.CheckBox(hitbox.position, hitBoxScale/2, hitbox.rotation))
         { 
             Destroy(g);
             return origin; //This is returned if the track would overlap

@@ -52,11 +52,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1438428279741396735}
     m_Modifications:
-    - target: {fileID: 6841887858336398318, guid: e039bbd2e0a851544aeae2c2622c315f,
-        type: 3}
-      propertyPath: m_Name
-      value: SceneryPoints
-      objectReference: {fileID: 0}
     - target: {fileID: 1970029891815123697, guid: e039bbd2e0a851544aeae2c2622c315f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -161,6 +156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 89.99999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6841887858336398318, guid: e039bbd2e0a851544aeae2c2622c315f,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneryPoints
       objectReference: {fileID: 0}
     - target: {fileID: 4944941799723572970, guid: e039bbd2e0a851544aeae2c2622c315f,
         type: 3}
@@ -316,16 +316,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 914092eeabaabd7448494d34ee1455e5,
-        type: 3}
-      propertyPath: m_Name
-      value: 22.5 Bend Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 914092eeabaabd7448494d34ee1455e5,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 914092eeabaabd7448494d34ee1455e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,6 +370,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 914092eeabaabd7448494d34ee1455e5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 914092eeabaabd7448494d34ee1455e5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 914092eeabaabd7448494d34ee1455e5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 914092eeabaabd7448494d34ee1455e5,
+        type: 3}
+      propertyPath: m_Name
+      value: 22.5 Bend Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 914092eeabaabd7448494d34ee1455e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5890935388186879994, guid: 914092eeabaabd7448494d34ee1455e5,
         type: 3}
