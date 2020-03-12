@@ -20,11 +20,14 @@ public class SceneryPlacer : MonoBehaviour
 
     IEnumerator PlaceScenery()
     {
-        foreach(GameObject g in sceneryPoints) { 
-            yield return new WaitForSeconds(0.0001f);
-            GameObject objToPlace = GetRandomSection();
-            
-            Place(objToPlace,g);
+        foreach(GameObject g in sceneryPoints) {
+            if (Random.Range(0, 5) == 0)
+            {
+                yield return new WaitForSeconds(0.0001f);
+                GameObject objToPlace = GetRandomSection();
+
+                Place(objToPlace, g);
+            }
         }
     }
 
@@ -32,16 +35,17 @@ public class SceneryPlacer : MonoBehaviour
     {
         Transform hitbox = objToPlace.GetComponent<Scenery>().hitbox;
         Vector3 spawnPoint = point.transform.position;
-        for(int i = 6; i > 0; i--)
+        for(int i = 10; i > 0; i--)
         {
-            if (Physics.CheckBox(point.transform.position, hitbox.localScale / 2, hitbox.rotation))
+            if (Physics.CheckBox(spawnPoint, hitbox.localScale *0.6f, point.transform.rotation))
             {
-                Instantiate(objToPlace, spawnPoint, Quaternion.identity); //this is default rotation for now
-                break;
+                
+                spawnPoint = spawnPoint + (point.transform.forward*2);
             }
             else
             {
-                spawnPoint = spawnPoint + point.transform.forward;
+                Instantiate(objToPlace, spawnPoint, point.transform.rotation); //this is default rotation for now
+                break;
             }
         }
     }
@@ -54,13 +58,13 @@ public class SceneryPlacer : MonoBehaviour
         foreach (GameObject g in sceneryObjects)
         {
             totalWeight += g.GetComponent<Scenery>().weight;
+            
         }
 
         foreach (GameObject g in sceneryObjects)
         {
-            float upper = currentWeight + g.GetComponent<Scenery>().weight;
+            float upper = currentWeight + g.GetComponent<Scenery>().weight/totalWeight;
             float floor = currentWeight;
-
             if (random >= floor && random < upper)
             {
                 return g;
