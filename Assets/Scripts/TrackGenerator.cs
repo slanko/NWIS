@@ -24,7 +24,6 @@ public class TrackGenerator : MonoBehaviour
         pieceCount = totalSections;
         height = 0;
         origin = gameObject;
-        Place(start);
         StartCoroutine(BuildTrack());
     }
 
