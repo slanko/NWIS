@@ -304,7 +304,27 @@ PrefabInstance:
     - target: {fileID: 3471199770480234780, guid: 232e11d24268fd4448ba1026c0f1b1aa,
         type: 3}
       propertyPath: controlHeight
-      value: 4
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471199770480234780, guid: 232e11d24268fd4448ba1026c0f1b1aa,
+        type: 3}
+      propertyPath: myCam
+      value: 
+      objectReference: {fileID: 1253011282843888835}
+    - target: {fileID: 3471199770480234780, guid: 232e11d24268fd4448ba1026c0f1b1aa,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471199770480234780, guid: 232e11d24268fd4448ba1026c0f1b1aa,
+        type: 3}
+      propertyPath: correctForce
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471199770480234780, guid: 232e11d24268fd4448ba1026c0f1b1aa,
+        type: 3}
+      propertyPath: turnSpeedBase
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3471199769576724220, guid: 232e11d24268fd4448ba1026c0f1b1aa,
         type: 3}
@@ -464,11 +484,27 @@ PrefabInstance:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 1253011280908861037}
+    - target: {fileID: 4049874823780134939, guid: a1f70d539975620458720055c80bdf25,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049874823780134939, guid: a1f70d539975620458720055c80bdf25,
+        type: 3}
+      propertyPath: far clip plane
+      value: 10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1f70d539975620458720055c80bdf25, type: 3}
 --- !u!4 &1253011280810507196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4049874822048868196, guid: a1f70d539975620458720055c80bdf25,
+    type: 3}
+  m_PrefabInstance: {fileID: 2979021952036969688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1253011282843888835 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4049874823780134939, guid: a1f70d539975620458720055c80bdf25,
     type: 3}
   m_PrefabInstance: {fileID: 2979021952036969688}
   m_PrefabAsset: {fileID: 0}
