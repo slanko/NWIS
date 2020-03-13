@@ -513,6 +513,9 @@ MonoBehaviour:
   buildPoints:
   - {fileID: 5537762921360745647}
   pillar: {fileID: -927199367670048503, guid: 2aa329a2d4b501440a77b99f6b891575, type: 3}
+  layer:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!1 &8821787986081765424
 GameObject:
   m_ObjectHideFlags: 0

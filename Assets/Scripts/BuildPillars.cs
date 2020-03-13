@@ -6,7 +6,7 @@ public class BuildPillars : MonoBehaviour
 {
     [SerializeField] Transform[] buildPoints;
     [SerializeField] GameObject pillar;
-
+    [SerializeField] LayerMask layer;
     public void Start()
     {
         TrackCompleted.complete += TrackComplete; 
@@ -20,7 +20,7 @@ public class BuildPillars : MonoBehaviour
     {
         foreach(Transform t in buildPoints)
         {
-            if (Physics.BoxCast(t.position, new Vector3(1, 1), Vector3.down * 100))
+            if (Physics.BoxCast(t.position, new Vector3(1, 1), Vector3.down * 100,t.transform.rotation,100,layer))
             {
             }
             else

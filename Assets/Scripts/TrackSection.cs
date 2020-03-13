@@ -10,6 +10,7 @@ public class TrackSection: ScriptableObject
     public int heightChange;
     public float difficulty;
     [HideInInspector] public float likelihood;
+    [SerializeField] LayerMask layer;
     public GameObject CreateSection(GameObject origin)
     {
         
@@ -23,7 +24,7 @@ public class TrackSection: ScriptableObject
 
         Vector3 hitBoxScale = hitbox.localScale;
         Debug.Log(g.transform.localScale);
-        if(Physics.CheckBox(hitbox.position, hitBoxScale/2, hitbox.rotation))
+        if(Physics.CheckBox(hitbox.position, hitBoxScale/2, hitbox.rotation,layer))
         { 
             Destroy(g);
             return origin; //This is returned if the track would overlap
