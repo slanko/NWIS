@@ -161,6 +161,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 924f07110fe945e439a7a63caf09bfd9,
+        type: 3}
+      propertyPath: m_Name
+      value: Cylinder (16)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 924f07110fe945e439a7a63caf09bfd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -235,11 +240,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 924f07110fe945e439a7a63caf09bfd9,
-        type: 3}
-      propertyPath: m_Name
-      value: Cylinder (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 924f07110fe945e439a7a63caf09bfd9, type: 3}
@@ -508,6 +508,16 @@ PrefabInstance:
       propertyPath: m_Depth
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5902760385505507401, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000017008192
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902760385505507401, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000018647948
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acc062a2da3a94e40836276e42f8790d, type: 3}
 --- !u!1 &631752209
@@ -539,6 +549,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c6a7ee35d988849886956b9eaacd70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chanceLookup:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.01
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.4
+      inSlope: 1.312083
+      outSlope: 1.312083
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.03559065
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  chance: 0
   sceneryPoints: []
   sceneryObjects:
   - {fileID: 3207909940626675364, guid: 0d4049eabe05d894eb460b917589a3fd, type: 3}
@@ -947,6 +982,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2781057114060205320, guid: 2a0bbd57182990a41824ee7efb029eb6,
+        type: 3}
+      propertyPath: m_Name
+      value: Start Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781057114060205320, guid: 2a0bbd57182990a41824ee7efb029eb6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1207832683098890011, guid: 2a0bbd57182990a41824ee7efb029eb6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1001,16 +1046,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2781057114060205320, guid: 2a0bbd57182990a41824ee7efb029eb6,
-        type: 3}
-      propertyPath: m_Name
-      value: Start Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 2781057114060205320, guid: 2a0bbd57182990a41824ee7efb029eb6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8960824150874674844, guid: 2a0bbd57182990a41824ee7efb029eb6,
         type: 3}
@@ -1132,7 +1167,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  totalSections: 100
+  totalSections: 80
   sections:
   - {fileID: 11400000, guid: a5405488ae0a9a74d86c14ade1b3c04b, type: 2}
   - {fileID: 11400000, guid: 8a71c4a4ee32f024797b18f9cccb244e, type: 2}

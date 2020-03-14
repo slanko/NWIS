@@ -7,18 +7,22 @@ public class Box
     public Vector3 size;
     public Box(Transform _transform, Vector3 _size)
     {
-        transform=_transform;
+        transform = _transform;
         size = _size;
     }
 }
 public class SceneryPlacer : MonoBehaviour
 {
+    [Tooltip("Chance of spawning in percent")]
+    public AnimationCurve chanceLookup;
+    public float chance;
     public GameObject[] sceneryPoints;
     public GameObject[] sceneryObjects;
     public List<Box> boxChecks = new List<Box>();
     [SerializeField] LayerMask layer;
     int count = 0;
-
+    Vector3 spawnPoint;
+    GameObject objToPlace;
     private void Start()
     {
         TrackCompleted.complete += TrackComplete;
@@ -31,69 +35,75 @@ public class SceneryPlacer : MonoBehaviour
 
     IEnumerator PlaceScenery()
     {
-        foreach(GameObject g in sceneryPoints) {
+        for (int i =0;i <sceneryPoints.Length;i++)
+        {
 
-                yield return new WaitForSeconds(0.0001f);
-                GameObject objToPlace = GetRandomSection();
+            chance = Mathf.PerlinNoise((float)i / (float)sceneryPoints.Length * 5, 0);
+            chance = chanceLookup.Evaluate(chance);
+            yield return new WaitForSeconds(0.0001f);
+            objToPlace = GetRandomSection();
 
-                Place(objToPlace, g);
+            CheckPlacement(sceneryPoints[i]);
         }
     }
 
-    void Place(GameObject objToPlace,GameObject point)
+    void CheckPlacement(GameObject point)
     {
         Vector3 spawnPoint = point.transform.position;
-        for(int i = 50; i > 0; i--)
+        float distAmt = 0;
+        for (int i = 20; i > 0; i--)
         {
-            if (Random.Range(0, 80) == 0)
+            if (Random.Range(0f, 1f)<chance)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(point.transform.position, Vector3.down, out hit, 1 << 8))
+                if (Physics.Raycast(spawnPoint, Vector3.down, out hit, 1000, 1 << 8, QueryTriggerInteraction.Ignore))
                 {
-                    GameObject g = Instantiate(objToPlace, hit.point, point.transform.rotation);
-                    BoxCollider hitbox = g.GetComponent<Scenery>().hitbox;
-                    
-                    Vector3 checkPoint = g.transform.position;
-                    Vector3 checkSize = hitbox.bounds.size;
-                    Debug.Log("Bounds size" + checkSize);
-                    hitbox.enabled = false;
-                    Quaternion checkRotation = g.transform.rotation;
-                    if (Physics.CheckBox(checkPoint, checkSize, checkRotation, layer))
-                    {
-                        Destroy(g);
-                        spawnPoint = spawnPoint + (point.transform.forward * 8);
-                    }
-                    else
-                    {
-                        GameObject tempObj = new GameObject();
-                        tempObj.transform.position = checkPoint;
-                        tempObj.transform.rotation = checkRotation;
-                        boxChecks.Add(new Box(tempObj.transform, checkSize));
-                        hitbox.enabled = true;
-                        objToPlace = GetRandomSection();
-                    }
+                    point.transform.position = hit.point;
+                    Place(point);
                 }
-                else
-                {
-                    spawnPoint = spawnPoint + (point.transform.forward * 8);
-                }
-                
             }
-            else
-            {
-                spawnPoint = spawnPoint + (point.transform.forward * 8);
-            }
+            spawnPoint = spawnPoint + (point.transform.forward * distAmt);
+            distAmt++;
         }
     }
 
-    void OnDrawGizmosSelected()
+    void Place(GameObject point) //returns true if successful.
     {
-        foreach(Box b in boxChecks)
+        spawnPoint = point.transform.position;
+        GameObject g = Instantiate(objToPlace, point.transform.position, Quaternion.identity);
+        BoxCollider hitbox = g.GetComponent<Scenery>().hitbox;
+        Vector3 checkPoint = hitbox.bounds.center;
+        Vector3 checkSize = hitbox.bounds.size;
+        hitbox.enabled = false;
+        g.transform.rotation = point.transform.rotation;
+        Quaternion checkRotation = g.transform.rotation;
+
+        if (Physics.CheckBox(checkPoint, checkSize/2, checkRotation, layer))
+        {
+            Destroy(g);
+            Debug.Log("Box Failed");
+            spawnPoint = spawnPoint + (point.transform.forward * 8);
+            return;
+        }
+
+       /* GameObject tempObj = new GameObject();
+        tempObj.transform.position = checkPoint;
+        tempObj.transform.rotation = checkRotation;
+        boxChecks.Add(new Box(tempObj.transform, checkSize));*/
+        hitbox.enabled = true;
+        objToPlace = GetRandomSection();
+    }
+
+   /* void OnDrawGizmosSelected()
+    {
+        foreach (Box b in boxChecks)
         {
             Gizmos.matrix = b.transform.localToWorldMatrix;
-            Gizmos.DrawCube(Vector3.zero,b.size);
+            Gizmos.DrawCube(Vector3.zero, b.size);
+            Destroy(b.transform.gameObject);
         }
-    }
+        
+    }*/
 
     public GameObject GetRandomSection()
     {
@@ -103,18 +113,18 @@ public class SceneryPlacer : MonoBehaviour
         foreach (GameObject g in sceneryObjects)
         {
             totalWeight += g.GetComponent<Scenery>().weight;
-            
+
         }
 
         foreach (GameObject g in sceneryObjects)
         {
-            float upper = currentWeight + g.GetComponent<Scenery>().weight/totalWeight;
+            float upper = currentWeight + (g.GetComponent<Scenery>().weight / totalWeight);
             float floor = currentWeight;
             if (random >= floor && random < upper)
             {
                 return g;
             }
-            currentWeight += g.GetComponent<Scenery>().weight / totalWeight;
+            currentWeight += (g.GetComponent<Scenery>().weight / totalWeight);
         }
         Debug.Log("failed to select a section");
         return null;
