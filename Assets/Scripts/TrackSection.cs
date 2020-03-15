@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class TrackSection: ScriptableObject
+public class TrackSection : ScriptableObject
 {
     public GameObject prefab;
     public float weight;
@@ -13,26 +13,45 @@ public class TrackSection: ScriptableObject
     [SerializeField] LayerMask layer;
     public GameObject CreateSection(GameObject origin)
     {
-        
+
         GameObject g = Instantiate(prefab, origin.transform.position, origin.transform.rotation);
+        FlipSectionRandom(g);
         SectionData data = g.GetComponent<SectionData>();
         Transform end = data.end;
         Transform start = data.start;
-        Transform hitbox = data.hitbox;
-        data.trackCollider.enabled = false;
-        FlipSectionRandom(g);
+        BoxCollider hitBox = data.hitbox;
 
-        Vector3 hitBoxScale = hitbox.localScale;
+
+        
+        Vector3 checkPoint = hitBox.transform.TransformPoint(hitBox.center);
+        Quaternion checkRotation = hitBox.transform.rotation;
+        hitBox.enabled = true;
+        hitBox.transform.rotation = Quaternion.identity;
+        Physics.SyncTransforms();
+        Vector3 checkSize = hitBox.bounds.size;
+        hitBox.transform.rotation = checkRotation;
+        Physics.SyncTransforms();
+        hitBox.enabled = false;
+
+        
+        data.trackCollider.enabled = false;
+        
         Debug.Log(g.transform.localScale);
-        if(Physics.CheckBox(hitbox.position, hitBoxScale/2, hitbox.rotation,layer))
-        { 
+        if (Physics.CheckBox(checkPoint, checkSize / 2, checkRotation, layer))
+        {
             Destroy(g);
             return origin; //This is returned if the track would overlap
         }
         else
-        {       
+        {
             TrackGenerator.height += heightChange;
             data.trackCollider.enabled = true;
+            GameObject tempObj = new GameObject();
+            tempObj.transform.rotation = checkRotation;
+            tempObj.transform.position = checkPoint;
+            g.GetComponent<HitboxVis>().b = new Box(tempObj.transform, checkSize);
+
+
             return end.gameObject;
         }
     }

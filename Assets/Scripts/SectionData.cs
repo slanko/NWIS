@@ -7,5 +7,5 @@ public class SectionData : MonoBehaviour
     public MeshCollider trackCollider;
     public Transform start;
     public Transform end;
-    public Transform hitbox;
+    public BoxCollider hitbox;
 }
