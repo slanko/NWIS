@@ -6,7 +6,7 @@ public class ShipControl : MonoBehaviour
 {
     public int playerNum;
     Rigidbody rb;
-    public float accelSpeedBase, accelSpeedTweaked, turnSpeedBase, tweakedTurnSpeed, brakeDrag, xDragDiv, correctForce, controlHeight, baseCamFOV;
+    public float accelSpeedBase, accelSpeedTweaked, turnSpeedBase, tweakedTurnSpeed, turnSpeedDecrease, minTurnSpeed, brakeDrag, xDragDiv, correctForce, controlHeight, baseCamFOV, downForce;
     public Vector3 localVelocity;
     public string accelName, horizontalName;
     public Camera myCam;
@@ -43,7 +43,7 @@ public class ShipControl : MonoBehaviour
         localVel.x = localVel.x / xDragDiv;
         if(localVel.y > 0)
         {
-            localVel.y = localVel.y / 2;
+            localVel.y = localVel.y / 1.5f;
         }
 
         localVelocity = new Vector3(localVel.x, localVel.y, localVel.z);
@@ -51,7 +51,12 @@ public class ShipControl : MonoBehaviour
         
         //FOV bullshit
         myCam.fieldOfView = baseCamFOV + (localVel.z / 3f);
-        tweakedTurnSpeed = turnSpeedBase - localVel.z;
+        //tweakedTurnSpeed = turnSpeedBase - localVel.z;
+        tweakedTurnSpeed = turnSpeedBase - Mathf.Pow( localVel.z * turnSpeedDecrease, 2);
+        if(tweakedTurnSpeed < minTurnSpeed)
+        {
+            tweakedTurnSpeed = minTurnSpeed;
+        }
         if (Physics.Raycast(transform.position, Vector3.down, out var hit, controlHeight))
         {
             var up = hit.normal;
@@ -62,7 +67,8 @@ public class ShipControl : MonoBehaviour
             rb.AddForceAtPosition(-up * Time.deltaTime, localUp * -correctForce, ForceMode.Impulse);
         }
 
-
+        //downforce script
+        rb.AddForce(Vector3.down * downForce);
 
     }
 }

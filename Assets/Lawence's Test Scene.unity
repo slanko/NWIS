@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.46226418, g: 0.39178646, b: 0.37286404, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e2156329e1d5a7b43954cbf99fda01ae, type: 2}
   m_HaloStrength: 0.5
@@ -485,10 +485,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1012303097699784960, guid: acc062a2da3a94e40836276e42f8790d,
         type: 3}
-      propertyPath: turnSpeedBase
-      value: 200
+      propertyPath: brakeDrag
+      value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1393478906254466656, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1393478906254466656, guid: acc062a2da3a94e40836276e42f8790d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acc062a2da3a94e40836276e42f8790d, type: 3}
 --- !u!1 &631752209
 GameObject:
@@ -1078,8 +1084,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.7970581
-      value: 0.03045001
+      time: 0.8052368
+      value: 0.99742997
       inSlope: -0.060768705
       outSlope: -0.060768705
       tangentMode: 0
@@ -1089,8 +1095,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.99262005
       value: 0.009400646
-      inSlope: -0.10763528
-      outSlope: -0.10763528
+      inSlope: -5.2727733
+      outSlope: -5.2727733
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

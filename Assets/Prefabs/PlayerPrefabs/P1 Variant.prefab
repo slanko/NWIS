@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1253011282036964944, guid: d0ae4fc88614d414db44978ef14a0cca,
         type: 3}
       propertyPath: m_Name
-      value: P1
+      value: P1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1253011282036964951, guid: d0ae4fc88614d414db44978ef14a0cca,
         type: 3}
@@ -82,26 +82,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1253011280908861031, guid: d0ae4fc88614d414db44978ef14a0cca,
-        type: 3}
-      propertyPath: xDragMult
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1253011280908861031, guid: d0ae4fc88614d414db44978ef14a0cca,
-        type: 3}
-      propertyPath: xDragDiv
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1253011280908861031, guid: d0ae4fc88614d414db44978ef14a0cca,
-        type: 3}
-      propertyPath: turnSpeedBase
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812411598848178902, guid: d0ae4fc88614d414db44978ef14a0cca,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f036ecbf26a8c374a96f53ee840dba7a, type: 2}
     - target: {fileID: 1479245592261344132, guid: d0ae4fc88614d414db44978ef14a0cca,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -127,5 +107,25 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 1253011280908861031, guid: d0ae4fc88614d414db44978ef14a0cca,
+        type: 3}
+      propertyPath: xDragMult
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253011280908861031, guid: d0ae4fc88614d414db44978ef14a0cca,
+        type: 3}
+      propertyPath: xDragDiv
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253011280908861031, guid: d0ae4fc88614d414db44978ef14a0cca,
+        type: 3}
+      propertyPath: turnSpeedBase
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812411598848178902, guid: d0ae4fc88614d414db44978ef14a0cca,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f036ecbf26a8c374a96f53ee840dba7a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0ae4fc88614d414db44978ef14a0cca, type: 3}
