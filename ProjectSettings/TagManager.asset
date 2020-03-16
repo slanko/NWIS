@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Scenery Point
   - Ground
+  - Track
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - 
   - OutOfBounds
-  - 
+  - Track
   - 
   - 
   - 

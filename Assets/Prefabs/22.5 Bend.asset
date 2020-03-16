@@ -16,7 +16,7 @@ MonoBehaviour:
   weight: 5
   heightChange: 0
   difficulty: 0.4
-  likelihood: 0.61079466
+  likelihood: 0.61136484
   layer:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 567
