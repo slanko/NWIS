@@ -20,14 +20,13 @@ public class BuildPillars : MonoBehaviour
     {
         foreach(Transform t in buildPoints)
         {
-            if (Physics.BoxCast(t.position, new Vector3(1, 1), Vector3.down * 100,t.transform.rotation,100,layer))
+            if (t != null)
             {
-            }
-            else
-            {
-                Instantiate(pillar, t.position, t.rotation);
-            }
-            
+                if (Physics.BoxCast(t.position, new Vector3(1, 1), Vector3.down * 100, t.transform.rotation, 100, layer)==false)
+                {
+                    Instantiate(pillar, t.position, t.rotation);
+                }
+            }          
         }
     }
 }
