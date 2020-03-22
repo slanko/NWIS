@@ -70,17 +70,19 @@ public class SceneryPlacer : MonoBehaviour
     void Place(GameObject point) //returns true if successful.
     {
         spawnPoint = point.transform.position;
-        GameObject g = Instantiate(objToPlace, point.transform.position, Quaternion.identity);
+        GameObject g = Instantiate(objToPlace, point.transform.position, point.transform.rotation);
         BoxCollider hitbox = g.GetComponent<Scenery>().hitbox;
         hitbox.enabled = true;
-        g.transform.rotation = point.transform.rotation;
+        Quaternion originalRotation = hitbox.transform.rotation;
+        hitbox.transform.rotation = Quaternion.identity;
         Physics.SyncTransforms();
         Vector3 checkPoint = hitbox.bounds.center;
         Vector3 checkSize = hitbox.bounds.size;
+        hitbox.transform.rotation = originalRotation;
         hitbox.enabled = false;
         Physics.SyncTransforms();
 
-        Quaternion checkRotation = g.transform.rotation;
+        Quaternion checkRotation = hitbox.transform.rotation;
 
         if (Physics.CheckBox(checkPoint, checkSize/2, checkRotation, layer))
         {
