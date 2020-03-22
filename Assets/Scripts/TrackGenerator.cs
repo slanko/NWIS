@@ -16,7 +16,7 @@ public class TrackGenerator : MonoBehaviour
     public TrackSection start;
     public TrackSection end;
     GameObject origin;
-    List<GameObject> buildPoints = new List<GameObject>();
+    public List<GameObject> buildPoints = new List<GameObject>();
     List<TrackSection> placedSections = new List<TrackSection>();
     bool success = false;
     private void Start()
