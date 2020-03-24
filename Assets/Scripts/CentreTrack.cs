@@ -13,11 +13,11 @@ public class CentreTrack : MonoBehaviour
     private void Start()
     {
         cam.target = buildingPos;
-        TrackCompleted.complete += Finished;
+        TrackStatus.trackComplete += Finished;
     }
     private void OnDestroy()
     {
-        TrackCompleted.complete -= Finished;
+        TrackStatus.trackComplete -= Finished;
     }
     private void Update()
     {
@@ -27,7 +27,8 @@ public class CentreTrack : MonoBehaviour
     }
     void Step()
     {
-        targetPos = trackGen.buildPoints[trackGen.buildPoints.Count - 1].transform.position;
+        if(trackGen.buildPoints.Count>0)
+            targetPos = trackGen.buildPoints[trackGen.buildPoints.Count - 1].transform.position;
     }
     private void Finished()
     {

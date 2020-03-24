@@ -6,12 +6,12 @@ public class EnableWalls : MonoBehaviour
 {
     private void Start()
     {
-        TrackCompleted.complete += EnableColliders;
+        TrackStatus.trackComplete += EnableColliders;
     }
 
     private void OnDestroy()
     {
-        TrackCompleted.complete -= EnableColliders;
+        TrackStatus.trackComplete -= EnableColliders;
     }
     public void EnableColliders()
     {

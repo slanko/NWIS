@@ -23,9 +23,15 @@ public class SceneryPlacer : MonoBehaviour
     int count = 0;
     Vector3 spawnPoint;
     GameObject objToPlace;
+    public static float progress = 0;
     private void Start()
     {
-        TrackCompleted.complete += TrackComplete;
+        TrackStatus.trackComplete += TrackComplete;
+        progress = 0;
+    }
+    private void OnDestroy()
+    {
+        TrackStatus.trackComplete -= TrackComplete;
     }
     void TrackComplete()
     {
@@ -42,9 +48,10 @@ public class SceneryPlacer : MonoBehaviour
             chance = chanceLookup.Evaluate(chance);
             yield return new WaitForSeconds(0.0001f);
             objToPlace = GetRandomSection();
-
             CheckPlacement(sceneryPoints[i]);
+            progress = (float)i / sceneryPoints.Length;
         }
+        TrackStatus.sceneryPlaced();
     }
 
     void CheckPlacement(GameObject point)

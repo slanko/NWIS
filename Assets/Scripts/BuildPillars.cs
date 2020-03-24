@@ -9,12 +9,12 @@ public class BuildPillars : MonoBehaviour
     [SerializeField] LayerMask layer;
     public void Start()
     {
-        TrackCompleted.complete += TrackComplete; 
+        TrackStatus.trackComplete += TrackComplete; 
     }
 
     private void OnDestroy()
     {
-        TrackCompleted.complete -= TrackComplete;
+        TrackStatus.trackComplete -= TrackComplete;
     }
     public void TrackComplete()
     {

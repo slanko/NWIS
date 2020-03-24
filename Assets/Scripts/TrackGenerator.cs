@@ -6,6 +6,7 @@ public class TrackGenerator : MonoBehaviour
 {
     public AnimationCurve difficulty;
     public static int height = 0;
+    public static float progress = 0;
     public int totalSections;
     int pieceCount;
     int stepBackAmount = 0;
@@ -23,10 +24,10 @@ public class TrackGenerator : MonoBehaviour
     {
         pieceCount = totalSections;
         height = 0;
+        progress = 0;
         origin = gameObject;
         StartCoroutine(BuildTrack());
     }
-
     IEnumerator BuildTrack()
     {
         while (pieceCount > 0)
@@ -55,16 +56,14 @@ public class TrackGenerator : MonoBehaviour
                 StepBack();
             }
         }
-        TrackCompleted.complete();
+        TrackStatus.trackComplete();
     }
-
     public bool Place(TrackSection piece)
     {
         GameObject oldOrigin = origin;
         origin = piece.CreateSection(origin);
         return origin != oldOrigin ? true : false;
     }
-
     public TrackSection GetRandomSection()
     {
         float currentDifficulty = difficulty.Evaluate((totalSections - pieceCount)/(float)totalSections);
@@ -103,24 +102,26 @@ public class TrackGenerator : MonoBehaviour
         Debug.Log("failed to select a section");
         return null;
     }
-
-    
     void SuccessfulPlacement(TrackSection section)
     {
         placedSections.Add(section);
         buildPoints.Add(origin);
         pieceCount--;
-        if(lastCount <buildPoints.Count)
+        if (lastCount <buildPoints.Count)
         {
             lastCount = buildPoints.Count;
             stepBackAmount = 0;
         }
+        UpdateProgress();
     }
-
+    void UpdateProgress()
+    {
+        progress = (float)placedSections.Count / (float)totalSections;
+    }
     void StepBack()
     {
         int dif = (lastCount - buildPoints.Count);
-        stepBackAmount+=1;
+        stepBackAmount = Mathf.Clamp(stepBackAmount + 1, 0, 10);
         int stepsBack = stepBackAmount - dif;
         for (int i = stepsBack; i>0; i--)
         {
@@ -132,5 +133,6 @@ public class TrackGenerator : MonoBehaviour
             pieceCount++;
             origin = buildPoints[buildPoints.Count - 1];
         }
+        UpdateProgress();
     }
 }
