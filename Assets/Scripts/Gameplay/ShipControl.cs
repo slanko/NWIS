@@ -10,6 +10,7 @@ public class ShipControl : MonoBehaviour
     public Vector3 localVelocity;
     public string accelName, horizontalName;
     public Camera myCam;
+    public startLightsScript sLS;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,10 @@ public class ShipControl : MonoBehaviour
         //input/acceleration and turning script
         if (Input.GetAxis(accelName) > 0)
         {
-            rb.AddForce(transform.forward * (Input.GetAxis(accelName) * accelSpeedBase), ForceMode.Force);
+            if(sLS.raceStarted == true)
+            {
+                rb.AddForce(transform.forward * (Input.GetAxis(accelName) * accelSpeedBase), ForceMode.Force);
+            }
             
         }
         if (Input.GetAxis(accelName) < 0)
@@ -35,28 +39,37 @@ public class ShipControl : MonoBehaviour
         {
             rb.drag = 1;
         }
-        rb.AddTorque(transform.up * (tweakedTurnSpeed* Input.GetAxis(horizontalName)));
 
-        //distance from track check
+        //changing x velocity to make it turn better
         var localVel = transform.InverseTransformDirection(rb.velocity);
 
         localVel.x = localVel.x / xDragDiv;
-        if(localVel.y > 0)
+        if (localVel.y > 0)
         {
             localVel.y = localVel.y / 1.5f;
         }
+
+        //tweakedTurnSpeed = turnSpeedBase - localVel.z;
+        tweakedTurnSpeed = turnSpeedBase - Mathf.Pow(localVel.z * turnSpeedDecrease, 2);
+        if (tweakedTurnSpeed < minTurnSpeed)
+        {
+            tweakedTurnSpeed = minTurnSpeed;
+        }
+
+        if (sLS.raceStarted == true)
+        {
+            rb.AddTorque(transform.up * (tweakedTurnSpeed * Input.GetAxis(horizontalName)));
+        }
+
 
         localVelocity = new Vector3(localVel.x, localVel.y, localVel.z);
         rb.velocity = transform.TransformDirection(localVel);
         
         //FOV bullshit
         myCam.fieldOfView = baseCamFOV + (localVel.z / 3f);
-        //tweakedTurnSpeed = turnSpeedBase - localVel.z;
-        tweakedTurnSpeed = turnSpeedBase - Mathf.Pow( localVel.z * turnSpeedDecrease, 2);
-        if(tweakedTurnSpeed < minTurnSpeed)
-        {
-            tweakedTurnSpeed = minTurnSpeed;
-        }
+
+
+
         if (Physics.Raycast(transform.position, Vector3.down, out var hit, controlHeight))
         {
             var up = hit.normal;
