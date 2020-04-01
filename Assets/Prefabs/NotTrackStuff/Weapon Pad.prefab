@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 104976544402208931}
   - component: {fileID: 104976544402208988}
   - component: {fileID: 104976544402208989}
+  - component: {fileID: 1169030466}
   m_Layer: 0
   m_Name: Weapon Pad
   m_TagString: weaponPad
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f036ecbf26a8c374a96f53ee840dba7a, type: 2}
+  - {fileID: 2100000, guid: 3d91f6288e3fd5d499fa356dadc0a8ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,3 +93,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 17.07476, z: 1}
   m_Center: {x: 0, y: 8.037378, z: 0}
+--- !u!95 &1169030466
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104976544402208990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0846a11b382fce44a0f218bfcc45b14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Scenery Point
   - weaponPad
+  - finishLine
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcess
   - 
   - 
   - 
