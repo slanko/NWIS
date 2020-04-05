@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Lawrence's Menu.unity
+    guid: ea6db034534bc7945b45c0df07510e24
+  - enabled: 1
     path: Assets/Lawence's Test Scene.unity
     guid: 4b92287a700af7246a55050235a219f3
   m_configObjects: {}

@@ -29,7 +29,7 @@ public class TrackBuildInput : MonoBehaviour
     void Race()
     {
         if(generationComplete)
-            events.startGame.Invoke();
+            events.finishedGen.Invoke();
     }
     void Regen()
     {

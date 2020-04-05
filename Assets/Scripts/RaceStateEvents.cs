@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class RaceStateEvents : MonoBehaviour
 {
+    public UnityEvent finishedGen;
     public UnityEvent startGame;
     public UnityEvent beginCountdown;
     public UnityEvent beginRace;

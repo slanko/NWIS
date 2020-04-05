@@ -26,7 +26,15 @@ public class TrackGenerator : MonoBehaviour
         height = 0;
         progress = 0;
         origin = gameObject;
+        TrackStatus.readyToGenerate += Begin;
+    }
+    public void Begin()
+    {
         StartCoroutine(BuildTrack());
+    }
+    private void OnDestroy()
+    {
+        TrackStatus.readyToGenerate -= Begin;
     }
     IEnumerator BuildTrack()
     {
@@ -66,8 +74,8 @@ public class TrackGenerator : MonoBehaviour
     }
     public TrackSection GetRandomSection()
     {
-        float currentDifficulty = difficulty.Evaluate((totalSections - pieceCount)/(float)totalSections);
-        Debug.Log(currentDifficulty + "Input is:"+ (totalSections - pieceCount) / (float)totalSections);
+        float currentDifficulty = difficulty.Evaluate((totalSections - pieceCount) / (float)totalSections);
+        Debug.Log(currentDifficulty + "Input is:" + (totalSections - pieceCount) / (float)totalSections);
         List<TrackSection> sectionsToChooseFrom = new List<TrackSection>();
         sectionsToChooseFrom.AddRange(sections);
         if (height < 2)
@@ -84,20 +92,20 @@ public class TrackGenerator : MonoBehaviour
         float currentWeight = 0;
         foreach (TrackSection t in sectionsToChooseFrom)
         {
-            t.likelihood =1- Mathf.Abs(t.difficulty - currentDifficulty);
-            totalWeight += t.weight*t.likelihood;
+            t.likelihood = 1 - Mathf.Abs(t.difficulty - currentDifficulty);
+            totalWeight += t.weight * t.likelihood;
         }
 
         foreach (TrackSection t in sectionsToChooseFrom)
         {
-            float upper = currentWeight + (t.weight*t.likelihood / totalWeight);
+            float upper = currentWeight + (t.weight * t.likelihood / totalWeight);
             float floor = currentWeight;
 
             if (random >= floor && random < upper)
             {
                 return t;
             }
-            currentWeight += t.weight*t.likelihood / totalWeight;
+            currentWeight += t.weight * t.likelihood / totalWeight;
         }
         Debug.Log("failed to select a section");
         return null;
@@ -107,7 +115,7 @@ public class TrackGenerator : MonoBehaviour
         placedSections.Add(section);
         buildPoints.Add(origin);
         pieceCount--;
-        if (lastCount <buildPoints.Count)
+        if (lastCount < buildPoints.Count)
         {
             lastCount = buildPoints.Count;
             stepBackAmount = 0;
@@ -123,7 +131,7 @@ public class TrackGenerator : MonoBehaviour
         int dif = (lastCount - buildPoints.Count);
         stepBackAmount = Mathf.Clamp(stepBackAmount + 1, 0, 10);
         int stepsBack = stepBackAmount - dif;
-        for (int i = stepsBack; i>0; i--)
+        for (int i = stepsBack; i > 0; i--)
         {
             height -= placedSections[placedSections.Count - 1].heightChange;
             placedSections.RemoveAt(placedSections.Count - 1);

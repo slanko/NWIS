@@ -51,7 +51,8 @@ public class ShipControl : MonoBehaviour
         
         //FOV bullshit
         myCam.fieldOfView = baseCamFOV + (localVel.z / 3f);
-        tweakedTurnSpeed = turnSpeedBase - localVel.z;
+        //tweakedTurnSpeed = turnSpeedBase - localVel.z;
+        tweakedTurnSpeed = turnSpeedBase;
         if (Physics.Raycast(transform.position, Vector3.down, out var hit, controlHeight))
         {
             var up = hit.normal;
