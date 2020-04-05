@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
   m_Name: FinishLine
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8645946646431701120, guid: e6e0b45f7de30d64c9eb5f454638e677, type: 3}
+  prefab: {fileID: 8645946646431701120, guid: 28afa3a701c949d44b4c26dd3f0cf0db, type: 3}
   weight: 0
   heightChange: 0
   difficulty: 0
   likelihood: 0
   layer:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 513

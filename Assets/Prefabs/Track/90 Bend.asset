@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
   m_Name: 90 Bend
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1600249112236825479, guid: ba42c7878a2fb3145a6f31503a3857fe, type: 3}
+  prefab: {fileID: 1600249112236825479, guid: 8f3512ebdd4bdd34ab9cd6eef8efad30, type: 3}
   weight: 5
   heightChange: 0
   difficulty: 0.9
   likelihood: 0.1113649
   layer:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 513

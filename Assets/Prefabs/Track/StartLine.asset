@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
   m_Name: StartLine
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2781057114060205320, guid: 2a0bbd57182990a41824ee7efb029eb6, type: 3}
+  prefab: {fileID: 2781057114060205320, guid: 02f66309b75b7ae4f86cf8218878484a, type: 3}
   weight: 0
   heightChange: 0
   difficulty: 0
   likelihood: 0
   layer:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 513

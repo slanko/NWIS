@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b260455481dd49ad73a2f21f1dc53, type: 3}
   m_Name: Down
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1637907602446861543, guid: 058e9bcf884b4e8468b0b9d3a2dc37bc, type: 3}
+  prefab: {fileID: 1637907602446861543, guid: 57a012933f6e7cd47a768c650b51f3e3, type: 3}
   weight: 2
   heightChange: -1
   difficulty: 0.5
   likelihood: 0.5113649
   layer:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 513

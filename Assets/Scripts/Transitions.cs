@@ -17,4 +17,8 @@ public class Transitions : MonoBehaviour
     {
         stateEvents.startGame.Invoke();
     }
+    public void BeginCountdown()
+    {
+        stateEvents.beginCountdown.Invoke();
+    }
 }

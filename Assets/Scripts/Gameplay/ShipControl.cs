@@ -10,7 +10,8 @@ public class ShipControl : MonoBehaviour
     public Vector3 localVelocity;
     public string accelName, horizontalName;
     public Camera myCam;
-    public startLightsScript sLS;
+    bool raceStarted = false;
+    RaceStateEvents raceState;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,17 @@ public class ShipControl : MonoBehaviour
         accelName = playerNum + "PAccelerate";
         horizontalName = playerNum + "PHorizontal";
         baseCamFOV = myCam.fieldOfView;
+        raceState = GameObject.FindGameObjectWithTag("RaceState").GetComponent<RaceStateEvents>();
+        raceState.beginRace.AddListener(RaceStart);
+    }
+
+    public void RaceStart()
+    {
+        raceStarted = true;
+    }
+    private void OnDestroy()
+    {
+        raceState.beginRace.RemoveListener(RaceStart);
     }
 
     private void FixedUpdate()
@@ -25,7 +37,7 @@ public class ShipControl : MonoBehaviour
         //input/acceleration and turning script
         if (Input.GetAxis(accelName) > 0)
         {
-            if(sLS.raceStarted == true)
+            if(raceStarted == true)
             {
                 rb.AddForce(transform.forward * (Input.GetAxis(accelName) * accelSpeedBase), ForceMode.Force);
             }
@@ -56,7 +68,7 @@ public class ShipControl : MonoBehaviour
             tweakedTurnSpeed = minTurnSpeed;
         }
 
-        if (sLS.raceStarted == true)
+        if (raceStarted == true)
         {
             rb.AddTorque(transform.up * (tweakedTurnSpeed * Input.GetAxis(horizontalName)));
         }
