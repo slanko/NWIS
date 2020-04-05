@@ -20,8 +20,8 @@ public class weaponSystem : MonoBehaviour
     void Start()
     {
         sc = GetComponent<ShipControl>();
-        mineButton = sc.playerNum + "PMineButton";
-        missileButton = sc.playerNum + "PMissileButton";
+        mineButton = sc.playerNum + "PB";
+        missileButton = sc.playerNum + "PX";
         missileCounter = GameObject.Find("OverlayCam/Canvas/P" + sc.playerNum + "missileAmount").GetComponent<Text>();
         mineCounter = GameObject.Find("OverlayCam/Canvas/P" + sc.playerNum + "mineAmount").GetComponent<Text>();
         shieldCounter = GameObject.Find("OverlayCam/Canvas/P" + sc.playerNum + "shieldAmount").GetComponent<Text>();
