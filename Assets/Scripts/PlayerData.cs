@@ -4,6 +4,5 @@ using UnityEngine;
 
 public static class PlayerData
 {
-    public static int playerCount;
-    public static List<int> players = new List<int>();
+    public static List<Player> players = new List<Player>();
 }

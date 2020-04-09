@@ -8,9 +8,9 @@ public class CameraSetup : MonoBehaviour
     public int playerNum;
     void Start()
     {
-        if (PlayerData.playerCount > 0)
+        if (PlayerData.players.Count > 0)
         {
-            ScreenPosition[] positions = ScreenSetup.playerScreens[PlayerData.playerCount - 1];
+            ScreenPosition[] positions = ScreenSetup.playerScreens[PlayerData.players.Count - 1];
             ScreenPosition pos = positions[playerNum - 1];
             Rect rect = new Rect(pos.position, pos.size);
             cam = GetComponent<Camera>();

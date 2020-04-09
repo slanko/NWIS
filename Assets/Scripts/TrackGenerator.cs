@@ -75,7 +75,6 @@ public class TrackGenerator : MonoBehaviour
     public TrackSection GetRandomSection()
     {
         float currentDifficulty = difficulty.Evaluate((totalSections - pieceCount) / (float)totalSections);
-        Debug.Log(currentDifficulty + "Input is:" + (totalSections - pieceCount) / (float)totalSections);
         List<TrackSection> sectionsToChooseFrom = new List<TrackSection>();
         sectionsToChooseFrom.AddRange(sections);
         if (height < 2)

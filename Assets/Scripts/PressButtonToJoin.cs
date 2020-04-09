@@ -4,27 +4,29 @@ using UnityEngine;
 using UnityEngine.Events;
 public class PressButtonToJoin : MonoBehaviour
 {
-    [SerializeField] int playerNum;
+    [SerializeField] Player player;
     [SerializeField] string joinButton;
     [SerializeField] string leaveButton;
     public UnityEvent join;
     public UnityEvent leave;
     bool joined = false;
+    private void Start()
+    {
+        PlayerData.players.Clear();
+    }
     private void Update()
     {
         if (Input.GetButtonDown(joinButton)&&!joined)
         {
             joined = true;
             join.Invoke();
-            PlayerData.players.Add(playerNum);
-            PlayerData.playerCount++;
+            PlayerData.players.Add(player);
         }
         if (Input.GetButtonDown(leaveButton)&&joined)
         {
             joined = false;
             leave.Invoke();
-            PlayerData.players.Remove(playerNum);
-            PlayerData.playerCount--;
+            PlayerData.players.Remove(player);
         }
     }
 }

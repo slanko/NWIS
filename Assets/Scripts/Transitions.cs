@@ -11,14 +11,16 @@ public class Transitions : MonoBehaviour
     }
     public void StartTrackGen()
     {
-        TrackStatus.readyToGenerate.Invoke();
+            TrackStatus.readyToGenerate.Invoke();
     }
     public void StartRace()
     {
-        stateEvents.startGame.Invoke();
+        if (stateEvents.startGame.GetPersistentEventCount() > 0)
+            stateEvents.startGame.Invoke();
     }
     public void BeginCountdown()
     {
-        stateEvents.beginCountdown.Invoke();
+       if(stateEvents.beginCountdown.GetPersistentEventCount()>0)
+           stateEvents.beginCountdown.Invoke();
     }
 }

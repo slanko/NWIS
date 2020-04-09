@@ -58,7 +58,7 @@ public class SceneryPlacer : MonoBehaviour
     {
         Vector3 spawnPoint = point.transform.position;
         float distAmt = 0;
-        for (int i = 20; i > 0; i--)
+        for (int i = 10; i > 0; i--)
         {
             if (Random.Range(0f, 1f)<chance)
             {
@@ -70,7 +70,7 @@ public class SceneryPlacer : MonoBehaviour
                 }
             }
             spawnPoint = spawnPoint + (point.transform.forward * distAmt);
-            distAmt++;
+            distAmt+=2;
         }
     }
 
@@ -78,23 +78,24 @@ public class SceneryPlacer : MonoBehaviour
     {
         spawnPoint = point.transform.position;
         GameObject g = Instantiate(objToPlace, point.transform.position, point.transform.rotation);
-        BoxCollider hitbox = g.GetComponent<Scenery>().hitbox;
-        hitbox.enabled = true;
-        Quaternion originalRotation = hitbox.transform.rotation;
-        hitbox.transform.rotation = Quaternion.identity;
+        Collider boxBounds = g.GetComponent<Scenery>().bounds;
+        Collider mesh = g.GetComponent<Scenery>().hitbox;
+        mesh.enabled = false;
+        boxBounds.enabled = true;
+        Quaternion originalRotation = boxBounds.transform.rotation;
+        boxBounds.transform.rotation = Quaternion.identity;
         Physics.SyncTransforms();
-        Vector3 checkPoint = hitbox.bounds.center;
-        Vector3 checkSize = hitbox.bounds.size;
-        hitbox.transform.rotation = originalRotation;
-        hitbox.enabled = false;
+        Vector3 checkPoint = boxBounds.bounds.center;
+        Vector3 checkSize = boxBounds.bounds.size;
+        boxBounds.transform.rotation = originalRotation;
+        boxBounds.enabled = false;
         Physics.SyncTransforms();
 
-        Quaternion checkRotation = hitbox.transform.rotation;
+        Quaternion checkRotation = boxBounds.transform.rotation;
 
         if (Physics.CheckBox(checkPoint, checkSize/2, checkRotation, layer))
         {
             Destroy(g);
-            Debug.Log("Box Failed");
             spawnPoint = spawnPoint + (point.transform.forward * 8);
             return;
         }
@@ -103,7 +104,8 @@ public class SceneryPlacer : MonoBehaviour
         tempObj.transform.position = checkPoint;
         tempObj.transform.rotation = checkRotation;
         boxChecks.Add(new Box(tempObj.transform, checkSize));*/
-        hitbox.enabled = true;
+        boxBounds.enabled = true;
+        mesh.enabled = true;
         objToPlace = GetRandomSection();
     }
 

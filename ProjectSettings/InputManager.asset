@@ -11,8 +11,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
-    altNegativeButton: a
-    altPositiveButton: d
+    altNegativeButton: 
+    altPositiveButton: 
     gravity: 3
     dead: 0.25
     sensitivity: 1
@@ -27,8 +27,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
-    altNegativeButton: a
-    altPositiveButton: d
+    altNegativeButton: 
+    altPositiveButton: 
     gravity: 3000
     dead: 0.01
     sensitivity: 5
@@ -51,6 +51,22 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: 2PHorizontal
+    descriptiveName: Alternative keyboard Input
+    descriptiveNegativeName: 
+    negativeButton: a
+    positiveButton: d
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3000
+    dead: 0.01
+    sensitivity: 5
+    snap: 0
+    invert: 0
+    type: 0
     axis: 0
     joyNum: 2
   - serializedVersion: 3
@@ -198,6 +214,22 @@ InputManager:
     axis: 2
     joyNum: 2
   - serializedVersion: 3
+    m_Name: 2PAccelerate
+    descriptiveName: Alternative Keyboard Input
+    descriptiveNegativeName: 
+    negativeButton: s
+    positiveButton: w
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 2
+  - serializedVersion: 3
     m_Name: 3PAccelerate
     descriptiveName: 
     descriptiveNegativeName: 
@@ -230,7 +262,7 @@ InputManager:
     axis: 2
     joyNum: 4
   - serializedVersion: 3
-    m_Name: 1PMineButton
+    m_Name: 1PB
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 1 button 1
@@ -246,7 +278,7 @@ InputManager:
     axis: 27
     joyNum: 1
   - serializedVersion: 3
-    m_Name: 2PMineButton
+    m_Name: 2PB
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 2 button 1
@@ -262,7 +294,7 @@ InputManager:
     axis: 27
     joyNum: 2
   - serializedVersion: 3
-    m_Name: 3PMineButton
+    m_Name: 3PB
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 3 button 1
@@ -278,7 +310,7 @@ InputManager:
     axis: 27
     joyNum: 3
   - serializedVersion: 3
-    m_Name: 4PMineButton
+    m_Name: 4PB
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 4 button 1
@@ -294,7 +326,7 @@ InputManager:
     axis: 27
     joyNum: 4
   - serializedVersion: 3
-    m_Name: 1PMissileButton
+    m_Name: 1PX
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 1 button 2
@@ -310,7 +342,7 @@ InputManager:
     axis: 27
     joyNum: 1
   - serializedVersion: 3
-    m_Name: 2PMissileButton
+    m_Name: 2PX
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 2 button 2
@@ -326,7 +358,7 @@ InputManager:
     axis: 27
     joyNum: 2
   - serializedVersion: 3
-    m_Name: 3PMissileButton
+    m_Name: 3PX
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 3 button 2
@@ -342,7 +374,7 @@ InputManager:
     axis: 27
     joyNum: 3
   - serializedVersion: 3
-    m_Name: 4PMissileButton
+    m_Name: 4PX
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 4 button 2
@@ -358,7 +390,7 @@ InputManager:
     axis: 27
     joyNum: 4
   - serializedVersion: 3
-    m_Name: 1PBoostButton
+    m_Name: 1PA
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 1 button 0
@@ -374,7 +406,7 @@ InputManager:
     axis: 27
     joyNum: 1
   - serializedVersion: 3
-    m_Name: 2PBoostButton
+    m_Name: 2PA
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 2 button 0
@@ -390,7 +422,23 @@ InputManager:
     axis: 27
     joyNum: 2
   - serializedVersion: 3
-    m_Name: 3PBoostButton
+    m_Name: 2PA
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: space
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 27
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: 3PA
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 3 button 0
@@ -406,7 +454,7 @@ InputManager:
     axis: 27
     joyNum: 3
   - serializedVersion: 3
-    m_Name: 4PBoostButton
+    m_Name: 4PA
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: joystick 4 button 0
@@ -459,6 +507,22 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 3
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 27
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: MenuStart
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 7
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

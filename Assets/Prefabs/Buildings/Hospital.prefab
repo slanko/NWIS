@@ -547,7 +547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2789433dc527a9c4aa5d613e19ec57e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 0.2
+  bounds: {fileID: -1261119030656653999}
   hitbox: {fileID: -1261119030656653999}
 --- !u!65 &-1261119030656653999
 BoxCollider:

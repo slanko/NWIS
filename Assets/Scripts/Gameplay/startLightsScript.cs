@@ -8,6 +8,8 @@ public class startLightsScript : MonoBehaviour
     public void startThaRace()
     {
         raceStarted = true;
-        GameObject.FindGameObjectWithTag("RaceState").GetComponent<RaceStateEvents>().beginRace.Invoke();
+        RaceStateEvents raceEvents = GameObject.FindGameObjectWithTag("RaceState").GetComponent<RaceStateEvents>();
+        if (raceEvents.beginCountdown.GetPersistentEventCount() > 0)
+          raceEvents.beginRace.Invoke();
     }
 }

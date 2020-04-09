@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class PlayerSetup : MonoBehaviour
 {
-    [SerializeField] GameObject[] players;
+    [SerializeField] GameObject[] inGamePlayers;
     int num = 1;
     private void Awake()
     {
-        if (PlayerData.playerCount > 0)
+       if (PlayerData.players.Count > 0)
         {
-            for (int i = 0; i < players.Length; i++)
+            foreach (Player p in PlayerData.players)
             {
-                if (!PlayerData.players.Contains(i + 1))
-                {
-                    players[i].SetActive(false);
-                }
-                else
-                {
-                    players[i].GetComponentInChildren<CameraSetup>().playerNum = num;
-                    num++;
-                }
+                inGamePlayers[p.number-1].SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject g in inGamePlayers)
+            {
+                g.SetActive(true);
             }
         }
     }

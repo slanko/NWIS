@@ -36,7 +36,6 @@ public class TrackSection : ScriptableObject
         
         data.trackCollider.enabled = false;
         
-        Debug.Log(g.transform.localScale);
         if (Physics.CheckBox(checkPoint, checkSize / 2, checkRotation, layer))
         {
             Destroy(g);
