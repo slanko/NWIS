@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class MissileScript : MonoBehaviour
 {
-    Rigidbody rb;
-    public float rocketSpeed, controlHeight, correctForce;
+    Rigidbody rb, pRb;
+    weaponSystem wS;
+    public float rocketSpeed, controlHeight, correctForce, explosionPower, explosionRadius;
+    public LayerMask correctLayer;
+    public GameObject explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,17 +18,28 @@ public class MissileScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out var hit, controlHeight))
+        if (Physics.Raycast(transform.position, Vector3.down, out var hit, controlHeight, correctLayer))
         {
             var up = hit.normal;
             var localUp = rb.transform.up;
             Debug.DrawLine(transform.position, hit.point, Color.green, 200);
-            rb.AddForceAtPosition(up * Time.deltaTime, localUp * correctForce, ForceMode.Impulse);
-            rb.AddForceAtPosition(-up * Time.deltaTime, localUp * -correctForce, ForceMode.Impulse);
-            //transform.rotation = hit.transform.rotation;
+            transform.position = new Vector3(transform.position.x, hit.transform.position.y + 1, transform.position.z);
         }
         rb.AddForce(transform.forward * rocketSpeed, ForceMode.Acceleration);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            pRb = other.gameObject.GetComponent<Rigidbody>();
+            wS = other.gameObject.GetComponent<weaponSystem>();
+            rb.AddExplosionForce(explosionPower, transform.position, explosionRadius, 1f, ForceMode.Impulse);
+            wS.health = wS.health - 1;
+        }
+        Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

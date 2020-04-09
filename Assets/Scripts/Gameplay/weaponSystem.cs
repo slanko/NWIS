@@ -8,7 +8,7 @@ public class weaponSystem : MonoBehaviour
     ShipControl sc;
     Animator padAnim;
     public GameObject missile, mine, missileLocation, mineLocation;
-    public int missileCount, mineCount, shieldCount, boostCount;
+    public int mineCount, missileCount, shieldCount, boostCount;
     int randomNum;
     string mineButton, missileButton;
     GameObject instMissile;
@@ -22,11 +22,6 @@ public class weaponSystem : MonoBehaviour
         sc = GetComponent<ShipControl>();
         mineButton = sc.playerNum + "PB";
         missileButton = sc.playerNum + "PX";
-        missileCounter = GameObject.Find("OverlayCam/Canvas/P" + sc.playerNum + "missileAmount").GetComponent<Text>();
-        mineCounter = GameObject.Find("OverlayCam/Canvas/P" + sc.playerNum + "mineAmount").GetComponent<Text>();
-        shieldCounter = GameObject.Find("OverlayCam/Canvas/P" + sc.playerNum + "shieldAmount").GetComponent<Text>();
-        boostCounter = GameObject.Find("OverlayCam/Canvas/P" + sc.playerNum + "boostAmount").GetComponent<Text>();
-        healthCount = GameObject.Find("OverlayCam/Canvas/P" + sc.playerNum + "Health").GetComponent<Text>();
 
     }
 
