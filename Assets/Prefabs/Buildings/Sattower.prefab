@@ -146,7 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 0.5
-  bounds: {fileID: 1426716364719738822}
   hitbox: {fileID: 1426716364719738822}
 --- !u!65 &1426716364719738822
 BoxCollider:

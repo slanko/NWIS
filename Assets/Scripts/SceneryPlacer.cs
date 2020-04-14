@@ -78,9 +78,7 @@ public class SceneryPlacer : MonoBehaviour
     {
         spawnPoint = point.transform.position;
         GameObject g = Instantiate(objToPlace, point.transform.position, point.transform.rotation);
-        Collider boxBounds = g.GetComponent<Scenery>().bounds;
-        Collider mesh = g.GetComponent<Scenery>().hitbox;
-        mesh.enabled = false;
+        Collider boxBounds = g.GetComponent<Scenery>().hitbox;
         boxBounds.enabled = true;
         Quaternion originalRotation = boxBounds.transform.rotation;
         boxBounds.transform.rotation = Quaternion.identity;
@@ -105,7 +103,6 @@ public class SceneryPlacer : MonoBehaviour
         tempObj.transform.rotation = checkRotation;
         boxChecks.Add(new Box(tempObj.transform, checkSize));*/
         boxBounds.enabled = true;
-        mesh.enabled = true;
         objToPlace = GetRandomSection();
     }
 

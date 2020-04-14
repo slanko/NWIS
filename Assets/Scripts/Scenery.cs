@@ -5,6 +5,5 @@ using UnityEngine;
 public class Scenery : MonoBehaviour
 {
     public float weight;
-    public Collider bounds;
     public Collider hitbox;
 }
