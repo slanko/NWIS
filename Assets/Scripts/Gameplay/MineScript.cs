@@ -6,7 +6,8 @@ public class MineScript : MonoBehaviour
 {
     Rigidbody rb;
     weaponSystem wS;
-    public float explosionPower,  explosionRadius;
+    public float explosionPower,  explosionRadius, controlHeight, lerpDownSpeed;
+    public LayerMask correctLayer;
     public GameObject explosion;
     // Start is called before the first frame update
     void Start()
@@ -28,5 +29,15 @@ public class MineScript : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out var hit, controlHeight, correctLayer))
+        {
+            var up = hit.normal;
+            Debug.DrawLine(transform.position, hit.point, Color.green, 200);
+            transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, hit.transform.position.y + .75f, lerpDownSpeed), transform.position.z);
+        }
     }
 }

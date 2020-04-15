@@ -109,6 +109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPower: 100
   explosionRadius: 5
+  controlHeight: Infinity
+  lerpDownSpeed: 0.03
+  correctLayer:
+    serializedVersion: 2
+    m_Bits: 512
   explosion: {fileID: 2218612586653116055, guid: 84ce0ba25445c754497ce9cca8f11db6,
     type: 3}
 --- !u!54 &6278826919941771411
@@ -208,6 +213,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477255461916112802, guid: aeba96358e40867458885362aaaffaa3,
+        type: 3}
+      propertyPath: m_Color.rgba
+      value: 4285559039
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477255462090380869, guid: aeba96358e40867458885362aaaffaa3,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477255462090380869, guid: aeba96358e40867458885362aaaffaa3,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.3066038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477255462090380869, guid: aeba96358e40867458885362aaaffaa3,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.3066038
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeba96358e40867458885362aaaffaa3, type: 3}

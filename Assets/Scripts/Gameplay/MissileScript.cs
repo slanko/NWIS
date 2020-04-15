@@ -6,7 +6,7 @@ public class MissileScript : MonoBehaviour
 {
     Rigidbody rb, pRb;
     weaponSystem wS;
-    public float rocketSpeed, controlHeight, correctForce, explosionPower, explosionRadius;
+    public float rocketSpeed, controlHeight, correctForce, explosionPower, explosionRadius, lerpDownSpeed;
     public LayerMask correctLayer;
     public GameObject explosion;
 
@@ -25,7 +25,7 @@ public class MissileScript : MonoBehaviour
             var up = hit.normal;
             var localUp = rb.transform.up;
             Debug.DrawLine(transform.position, hit.point, Color.green, 200);
-            transform.position = new Vector3(transform.position.x, hit.transform.position.y + 1, transform.position.z);
+            transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, hit.transform.position.y + .5f, lerpDownSpeed) , transform.position.z);
         }
         rb.AddForce(transform.forward * rocketSpeed, ForceMode.Acceleration);
     }
