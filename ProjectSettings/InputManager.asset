@@ -27,8 +27,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
-    altNegativeButton: a
-    altPositiveButton: d
+    altNegativeButton: 
+    altPositiveButton: 
     gravity: 3000
     dead: 0.01
     sensitivity: 5
@@ -51,6 +51,22 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: 2PHorizontal
+    descriptiveName: Alternate Keyboard Input
+    descriptiveNegativeName: 
+    negativeButton: a
+    positiveButton: d
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3000
+    dead: 0.01
+    sensitivity: 5
+    snap: 0
+    invert: 0
+    type: 0
     axis: 0
     joyNum: 2
   - serializedVersion: 3
@@ -195,6 +211,22 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
+    axis: 2
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: 2PAccelerate
+    descriptiveName: Alternate Keyboard Input
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: w
+    altNegativeButton: s
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
     axis: 2
     joyNum: 2
   - serializedVersion: 3
@@ -379,6 +411,22 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: joystick 2 button 0
     positiveButton: joystick 2 button 0
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 27
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: 2PA
+    descriptiveName: Alternate Keyboard Input
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: space
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

@@ -15,3 +15,5 @@ MonoBehaviour:
   number: 4
   screenName: Player Four
   position: 0
+  color: {r: 1, g: 0.49217367, b: 0, a: 1}
+  demo: {fileID: 294880578599816092, guid: e3ffbe1ffe493c44baa5047af236e0f0, type: 3}

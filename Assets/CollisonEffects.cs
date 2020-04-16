@@ -4,27 +4,54 @@ using UnityEngine;
 
 public class CollisonEffects : MonoBehaviour
 {
-    [SerializeField] ParticleSystem system;
-    [SerializeField] float emitHit;
-    [SerializeField] float emitStay;
-    float stayParticles = 0;
+    [System.Serializable]
+    [SerializeField]
+    class CollisionEffect
+    {
+        public ParticleSystem system;
+        public float hitEmission;
+        public float stayEmission;
+        [HideInInspector] public float partsToEmit;
+        public bool setColor;
+    }
+    [SerializeField] Transform fxTransform;
+    [SerializeField] CollisionEffect[] effects;
+
+
+    private void Start()
+    {
+        foreach (CollisionEffect ce in effects)
+        {
+            if (ce.setColor)
+            {
+                Color color = GetComponent<StorePlayer>().thisPlayer.color;
+                ParticleSystem.MainModule module = ce.system.main;
+                module.startColor = color;
+            }
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        system.transform.position = collision.contacts[0].point + collision.contacts[0].normal*0.2f;
-        system.Emit((int)(emitHit * collision.impulse.magnitude));
+        fxTransform.position = collision.contacts[0].point + collision.contacts[0].normal * 0.5f + (Vector3.up * 0.2f);
+        foreach (CollisionEffect ce in effects)
+        {
+            ce.system.Emit((int)(ce.hitEmission * collision.impulse.magnitude));
+        }
     }
     private void OnCollisionStay(Collision collision)
     {
+        fxTransform.position = collision.contacts[0].point + collision.contacts[0].normal * 0.5f + (Vector3.up * 0.2f);
 
-        system.transform.position = collision.contacts[0].point+collision.contacts[0].normal*0.2f;
-        stayParticles += (emitStay * collision.relativeVelocity.magnitude);
-        if (stayParticles > 1)
+        foreach (CollisionEffect ce in effects)
         {
-            int partsToEmit = (int)stayParticles;
-            stayParticles -= partsToEmit;
-            system.transform.position = collision.contacts[0].point + collision.contacts[0].normal * 0.2f;
-            system.Emit(partsToEmit);
+            ce.partsToEmit += (ce.stayEmission * collision.relativeVelocity.magnitude);
+            if (ce.partsToEmit > 1)
+            {
+                int parts = (int)ce.partsToEmit;
+                ce.partsToEmit -= parts;
+                ce.system.Emit(parts);
+            }
         }
     }
 }

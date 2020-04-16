@@ -15,3 +15,5 @@ MonoBehaviour:
   number: 3
   screenName: Player Three
   position: 0
+  color: {r: 0, g: 0.8396226, b: 0.0059033562, a: 1}
+  demo: {fileID: 7256104608367053224, guid: a1ee3e780ef70db4bbfaeed87df8db1d, type: 3}

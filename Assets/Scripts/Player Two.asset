@@ -15,3 +15,5 @@ MonoBehaviour:
   number: 2
   screenName: Player Two
   position: 0
+  color: {r: 0, g: 0.20915246, b: 1, a: 1}
+  demo: {fileID: 3827084285559047077, guid: fe4b52118583a19499fe92085eef4917, type: 3}
