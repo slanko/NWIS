@@ -42,8 +42,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 0.8784314, b: 0.4, a: 1}
-  m_Intensity: 2
-  m_Range: 2
+  m_Intensity: 3
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -365,7 +365,7 @@ MonoBehaviour:
   rocketSpeed: 50
   controlHeight: Infinity
   correctForce: 1000
-  explosionPower: 100
+  explosionPower: 50
   explosionRadius: 5
   lerpDownSpeed: 0.5
   correctLayer:
@@ -471,6 +471,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.43491
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791156742087789928, guid: 8994c71974b0c624fae6ac050ed489b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791156742849790705, guid: 8994c71974b0c624fae6ac050ed489b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796992770673797187, guid: 8994c71974b0c624fae6ac050ed489b0,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 796992770673797187, guid: 8994c71974b0c624fae6ac050ed489b0,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7528254
+      objectReference: {fileID: 0}
+    - target: {fileID: 796992770673797187, guid: 8994c71974b0c624fae6ac050ed489b0,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.5613208
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8994c71974b0c624fae6ac050ed489b0, type: 3}

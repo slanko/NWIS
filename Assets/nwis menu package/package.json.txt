@@ -1,0 +1,4 @@
+{
+	"nwis": "com.lms.nwispackage",
+	"version": "1.0.0"
+}
