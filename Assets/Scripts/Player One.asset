@@ -16,4 +16,4 @@ MonoBehaviour:
   screenName: Player One
   position: 1
   color: {r: 1, g: 0, b: 0, a: 1}
-  demo: {fileID: 5446627016674490513, guid: 4a1c32b282d88af4b803a3f005f0b431, type: 3}
+  demo: {fileID: 9118318698264247197, guid: 4a1c32b282d88af4b803a3f005f0b431, type: 3}
