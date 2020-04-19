@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &1594252809
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407268486439204899}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -4924490671662737721, guid: 86df916dd406ccc4f8b3e5d1cce6ee84, type: 3}
 --- !u!1 &1328714267542724984
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,9 +25,10 @@ GameObject:
   - component: {fileID: 5846960036446982307}
   - component: {fileID: 7504012008208391001}
   - component: {fileID: 431401727373665092}
-  m_Layer: 0
+  - component: {fileID: 1129489687}
+  m_Layer: 9
   m_Name: Track
-  m_TagString: Untagged
+  m_TagString: Track
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +93,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1129489687
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328714267542724984}
+  m_Material: {fileID: 13400000, guid: a6c70cd2becbfb84ebeac251b50cc8a1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -6251813149869215104, guid: c089b008893848047bbb511079f6b0a7, type: 3}
 --- !u!1 &1611868299577969580
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7044952153074335055}
   - component: {fileID: 3292077421308097354}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Halo (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +162,7 @@ GameObject:
   - component: {fileID: 8747779340476558591}
   - component: {fileID: 6073406195761096748}
   - component: {fileID: 8180054729494250100}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MiddleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +257,7 @@ GameObject:
   - component: {fileID: 3810348530603395105}
   - component: {fileID: 4133923785110397249}
   - component: {fileID: 632821166524364615}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +348,7 @@ GameObject:
   - component: {fileID: 3410361428260748039}
   - component: {fileID: 4699712169000627564}
   - component: {fileID: 6879187165439248565}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +426,7 @@ GameObject:
   - component: {fileID: 5066586005253784135}
   - component: {fileID: 3158527487295646666}
   - component: {fileID: 1307588595552163484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,9 +502,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8625084577574595145}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StartTrack
-  m_TagString: Untagged
+  m_TagString: Track
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,7 +539,7 @@ GameObject:
   - component: {fileID: 4177294887467237818}
   - component: {fileID: 2117881054908031486}
   - component: {fileID: 6654836776675308744}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Railing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +615,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9200588525834082440}
-  m_Layer: 0
+  - component: {fileID: 1552037253}
+  - component: {fileID: 1552037254}
+  m_Layer: 9
   m_Name: StartTrackLights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,6 +644,38 @@ Transform:
   m_Father: {fileID: 8625084577574595145}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1552037253
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328980314309454491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99568d20bb465f249a1bbcd73e8dd4aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1552037254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328980314309454491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc22799956f90e4d8136796546e9592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raceStarted: 0
 --- !u!1 &6090617656152979730
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +687,7 @@ GameObject:
   - component: {fileID: 5497065629391001611}
   - component: {fileID: 820032543626834894}
   - component: {fileID: 807420138951259302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Railing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5728819104992321785}
   - component: {fileID: 5595057165963210580}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Halo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +809,7 @@ GameObject:
   - component: {fileID: 1916570635455426526}
   - component: {fileID: 1229140890345034003}
   - component: {fileID: 8147394417290535149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +900,7 @@ GameObject:
   - component: {fileID: 2039290969125091502}
   - component: {fileID: 6769498439197057543}
   - component: {fileID: 1844127154733337525}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5342882032579312633}
   - component: {fileID: 7499780151535462392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Halo (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -958,7 +1021,7 @@ GameObject:
   - component: {fileID: 3398501355701038833}
   - component: {fileID: 5977099372956764025}
   - component: {fileID: 9051361628215914982}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1099,7 @@ GameObject:
   - component: {fileID: 670533946090661475}
   - component: {fileID: 4642848770710128433}
   - component: {fileID: 4654743380501794882}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Framing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,6 +1181,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartTrackSideBars (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1ec7f6708767f6846b42d507b5147f85,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5102530947620581811, guid: 1ec7f6708767f6846b42d507b5147f85,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1ec7f6708767f6846b42d507b5147f85,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1192,6 +1265,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartTrackGrate
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 86df916dd406ccc4f8b3e5d1cce6ee84,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -276992345774012462, guid: 86df916dd406ccc4f8b3e5d1cce6ee84,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -276992345774012462, guid: 86df916dd406ccc4f8b3e5d1cce6ee84,
+        type: 3}
+      propertyPath: m_TagString
+      value: Track
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 86df916dd406ccc4f8b3e5d1cce6ee84,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1260,6 +1348,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8755284004146003953}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &407268486439204899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -276992345774012462, guid: 86df916dd406ccc4f8b3e5d1cce6ee84,
+    type: 3}
+  m_PrefabInstance: {fileID: 8755284004146003953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8983977193106312655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1271,6 +1365,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StartTrackSideBars
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1ec7f6708767f6846b42d507b5147f85,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5102530947620581811, guid: 1ec7f6708767f6846b42d507b5147f85,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1ec7f6708767f6846b42d507b5147f85,
         type: 3}
