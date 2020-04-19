@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MissileScript : MonoBehaviour
 {
-    Rigidbody rb, pRb;
-    weaponSystem wS;
-    public float rocketSpeed, controlHeight, correctForce, explosionPower, explosionRadius;
+    Rigidbody rb;
+    public float rocketSpeed, controlHeight, correctForce, explosionPower, explosionRadius, lerpDownSpeed;
     public LayerMask correctLayer;
     public GameObject explosion;
+    bool damageDealt = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class MissileScript : MonoBehaviour
             var up = hit.normal;
             var localUp = rb.transform.up;
             Debug.DrawLine(transform.position, hit.point, Color.green, 200);
-            transform.position = new Vector3(transform.position.x, hit.transform.position.y + 1, transform.position.z);
+            rb.MovePosition(new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, hit.transform.position.y + .5f, lerpDownSpeed) , transform.position.z));
         }
         rb.AddForce(transform.forward * rocketSpeed, ForceMode.Acceleration);
     }
@@ -34,12 +34,16 @@ public class MissileScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            pRb = other.gameObject.GetComponent<Rigidbody>();
-            wS = other.gameObject.GetComponent<weaponSystem>();
-            rb.AddExplosionForce(explosionPower, transform.position, explosionRadius, 1f, ForceMode.Impulse);
-            wS.health = wS.health - 1;
+            var playerRB = other.gameObject.GetComponent<Rigidbody>();
+            var wS = other.gameObject.GetComponent<weaponSystem>();
+            playerRB.AddExplosionForce(explosionPower, rb.transform.position, explosionRadius, 1f, ForceMode.Impulse);
+            if(damageDealt == false)
+            {
+                wS.health = wS.health - 1;
+                damageDealt = true;
+            }
         }
-        Instantiate(explosion, transform.position, transform.rotation);
+        Instantiate(explosion, rb.transform.position, rb.transform.rotation);
         Destroy(gameObject);
     }
 }

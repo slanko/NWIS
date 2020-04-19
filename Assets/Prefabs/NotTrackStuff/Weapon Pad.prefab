@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 104976544402208931}
   - component: {fileID: 104976544402208988}
   - component: {fileID: 104976544402208989}
+  - component: {fileID: 4925353285346719532}
   - component: {fileID: 1169030466}
   m_Layer: 0
   m_Name: Weapon Pad
@@ -93,6 +94,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 17.07476, z: 1}
   m_Center: {x: 0, y: 8.037378, z: 0}
+--- !u!114 &4925353285346719532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104976544402208990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54bee8d8e5231c74495972555ef350f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chanceToSpawn: 10
 --- !u!95 &1169030466
 Animator:
   serializedVersion: 3

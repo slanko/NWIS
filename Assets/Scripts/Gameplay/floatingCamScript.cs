@@ -5,7 +5,7 @@ using UnityEngine;
 public class floatingCamScript : MonoBehaviour
 {
     public GameObject followTarget;
-    public float camFollowWeight;
+    public float camFollowWeight, camRotateWeight;
     public Quaternion followDirection;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,6 @@ public class floatingCamScript : MonoBehaviour
     {
         followDirection = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
         transform.position = Vector3.Lerp(transform.position, followTarget.transform.position, camFollowWeight);
-        transform.rotation = Quaternion.Lerp(followDirection, followTarget.transform.rotation, camFollowWeight);
+        transform.rotation = Quaternion.Lerp(followDirection, followTarget.transform.rotation, camRotateWeight);
     }
 }
