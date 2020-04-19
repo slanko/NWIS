@@ -7,7 +7,6 @@ public class themeSwitchScript : MonoBehaviour
     public Material lightSkyBox, darkSkyBox, windowLights1, windowLights2;
     public bool themeSwitch;
     public GameObject lightThemeStuff, darkThemeStuff;
-    //public ReflectionProbe refProbe;
     RenderTexture targetTexture;
     public Cubemap darkSky, lightSky;
 
@@ -48,7 +47,6 @@ public class themeSwitchScript : MonoBehaviour
             {
                 themeSwitch = true;
                 DynamicGI.UpdateEnvironment();
-                //refProbe.RenderProbe(targetTexture = null);
             }
         }
     }
