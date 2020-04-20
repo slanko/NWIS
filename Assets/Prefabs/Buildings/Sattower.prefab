@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 167611406164818885}
   - component: {fileID: 703372443565835558}
   - component: {fileID: 8670923751360517488}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,9 +90,9 @@ GameObject:
   - component: {fileID: 4031385092036739660}
   - component: {fileID: 3742664741867470144}
   - component: {fileID: 1426716364719738822}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sattower
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 2603942082437837355}
   - component: {fileID: 2616688038767355180}
   - component: {fileID: 4115442070514662014}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 1305633912627086463}
   - component: {fileID: 4804660373190757664}
   - component: {fileID: 1529584194829343098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 6936809234550840207}
   - component: {fileID: 4597216979769698857}
   - component: {fileID: 5706586212968865421}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

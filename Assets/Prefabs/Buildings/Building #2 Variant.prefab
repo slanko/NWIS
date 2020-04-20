@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &8853196671813544671
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3780150073201151104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -3838157358657118783, guid: 222b4e5302fcc0349abff557ec250bcc, type: 3}
 --- !u!114 &3535066812766496085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,6 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   hitbox: {fileID: 8853196671813544671}
+--- !u!64 &8853196671813544671
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780150073201151104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -3838157358657118783, guid: 222b4e5302fcc0349abff557ec250bcc, type: 3}
 --- !u!1001 &5006842445598134172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,6 +44,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 222b4e5302fcc0349abff557ec250bcc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 222b4e5302fcc0349abff557ec250bcc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -3075074996890948518, guid: 222b4e5302fcc0349abff557ec250bcc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3075074996890948518, guid: 222b4e5302fcc0349abff557ec250bcc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -1076876136800337124, guid: 222b4e5302fcc0349abff557ec250bcc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1076876136800337124, guid: 222b4e5302fcc0349abff557ec250bcc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -1076876136800337124, guid: 222b4e5302fcc0349abff557ec250bcc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 222b4e5302fcc0349abff557ec250bcc,
         type: 3}
@@ -98,16 +133,6 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 222b4e5302fcc0349abff557ec250bcc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3075074996890948518, guid: 222b4e5302fcc0349abff557ec250bcc,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1076876136800337124, guid: 222b4e5302fcc0349abff557ec250bcc,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3661849868571927647, guid: 222b4e5302fcc0349abff557ec250bcc,

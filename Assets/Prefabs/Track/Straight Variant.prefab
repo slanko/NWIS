@@ -378,15 +378,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 3447617990826498698, guid: 3e6105dbe38462445b70dc3431d673bd,
+    - target: {fileID: -5596015979558789, guid: 3e6105dbe38462445b70dc3431d673bd,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447617990826498698, guid: 3e6105dbe38462445b70dc3431d673bd,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
+      propertyPath: m_TagString
+      value: Track
       objectReference: {fileID: 0}
     - target: {fileID: -4846019876616440087, guid: 3e6105dbe38462445b70dc3431d673bd,
         type: 3}
@@ -452,6 +447,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447617990826498698, guid: 3e6105dbe38462445b70dc3431d673bd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447617990826498698, guid: 3e6105dbe38462445b70dc3431d673bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4918568498623632131, guid: 3e6105dbe38462445b70dc3431d673bd, type: 3}

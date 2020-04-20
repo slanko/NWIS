@@ -9,6 +9,8 @@ TagManager:
   - Track
   - RaceState
   - FinishLine
+  - weaponPad
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - OutOfBounds
   - Track
   - PostProcess
-  - 
+  - Building
   - 
   - 
   - 

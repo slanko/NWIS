@@ -16,9 +16,12 @@ public class Checkpoint : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
             RaycastHit hit;
-            if(Physics.Raycast(transform.position,Vector3.down,out hit, 100, layer))
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 100, layer))
             {
+                if (hit.collider.tag == "Track")
+                {
                     checkPoint = hit.transform;
+                }
             }
         }
     }

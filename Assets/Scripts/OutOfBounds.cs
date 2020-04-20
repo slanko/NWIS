@@ -8,7 +8,8 @@ public class OutOfBounds : MonoBehaviour
 {
     Checkpoint checkpoint;
     Rigidbody[] bodies;
-    const float spawnHeight = 2.5f;
+    [SerializeField] GameObject destroyed;
+    
     private void Start()
     {
         checkpoint = GetComponent<Checkpoint>();
@@ -16,15 +17,9 @@ public class OutOfBounds : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Ground")
+        if (collision.collider.tag == "Ground"|| collision.collider.tag == "Building")
         {
-            transform.position = checkpoint.checkPoint.position+new Vector3(0,spawnHeight,0);
-            transform.rotation = checkpoint.checkPoint.rotation;
-            foreach (var body in bodies)
-            {
-                body.velocity = Vector3.zero;
-                body.angularVelocity = Vector3.zero;
-            }
+            GetComponentInParent<ResetPlayer>().Reset(checkpoint);
         }
     }
 }
