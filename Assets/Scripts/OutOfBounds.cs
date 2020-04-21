@@ -7,13 +7,10 @@ using UnityEngine;
 public class OutOfBounds : MonoBehaviour
 {
     Checkpoint checkpoint;
-    Rigidbody[] bodies;
-    [SerializeField] GameObject destroyed;
     
     private void Start()
     {
         checkpoint = GetComponent<Checkpoint>();
-        bodies = GetComponentsInChildren<Rigidbody>();
     }
     private void OnCollisionEnter(Collision collision)
     {

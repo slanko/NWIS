@@ -49,7 +49,7 @@ public class ShipControl : MonoBehaviour
         }
         else
         {
-            rb.drag = 0.4f;
+            rb.drag = 1f;
         }
 
         //changing x velocity to make it turn better

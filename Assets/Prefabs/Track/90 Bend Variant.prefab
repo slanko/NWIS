@@ -131,6 +131,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5554455689802034000, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Track
+      objectReference: {fileID: 0}
     - target: {fileID: 4569525095303353316, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -257,15 +262,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: -4919044523942665536, guid: 54b001f60eab1664aa6fe858ab4800ba,
+    - target: {fileID: -9160747366184606078, guid: 54b001f60eab1664aa6fe858ab4800ba,
         type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: -4919044523942665536, guid: 54b001f60eab1664aa6fe858ab4800ba,
+    - target: {fileID: -32313925897054232, guid: 54b001f60eab1664aa6fe858ab4800ba,
         type: 3}
-      propertyPath: m_TagString
-      value: Track
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -32313925897054232, guid: 54b001f60eab1664aa6fe858ab4800ba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -5989924429173717595, guid: 54b001f60eab1664aa6fe858ab4800ba,
         type: 3}
@@ -332,20 +342,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -9160747366184606078, guid: 54b001f60eab1664aa6fe858ab4800ba,
+    - target: {fileID: -4919044523942665536, guid: 54b001f60eab1664aa6fe858ab4800ba,
         type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: -32313925897054232, guid: 54b001f60eab1664aa6fe858ab4800ba,
+    - target: {fileID: -4919044523942665536, guid: 54b001f60eab1664aa6fe858ab4800ba,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: -32313925897054232, guid: 54b001f60eab1664aa6fe858ab4800ba,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
+      propertyPath: m_TagString
+      value: Track
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1729176580016356038, guid: 54b001f60eab1664aa6fe858ab4800ba, type: 3}
