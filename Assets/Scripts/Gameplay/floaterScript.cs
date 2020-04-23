@@ -7,7 +7,6 @@ public class floaterScript : MonoBehaviour
 {
     Rigidbody rb;
     public float floatHeight, floatForce;
-    public LayerMask layers;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,7 @@ public class floaterScript : MonoBehaviour
     void FixedUpdate()
     {
         //ground check
-        if (Physics.Raycast(transform.position, Vector3.down, out var hit, floatHeight,layers))
+        if (Physics.Raycast(transform.position, Vector3.down, out var hit, floatHeight))
         {
             var proportion = Mathf.Pow(1 - hit.distance / floatHeight, 3);
             rb.AddForce(hit.normal * floatForce * proportion * Time.deltaTime, ForceMode.Impulse);

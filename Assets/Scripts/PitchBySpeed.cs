@@ -26,9 +26,4 @@ public class PitchBySpeed : MonoBehaviour
 
 
     }
-    void Update()
-    {
-        
-            
-    }
 }

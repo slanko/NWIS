@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &176848179414706573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012303096502802743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea6ed2c8f4aead4983b1cb6452b8f59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyed: {fileID: 6891553389894111156, guid: 640bfd57d56f9874fbf8ef20414a2378,
-    type: 3}
 --- !u!114 &1587627827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,11 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3ccdb0db54a56419b298cfc735cc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boost: {fileID: 3563099950031704546, guid: 2063d3ffa50f6ee4f85a52b6e0cf2f14, type: 3}
+  boostCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   vertical: 1PVertical
   horizontal: 1PHorizontal
-  button: 1PA
-  forceMulti: 100
-  horizontalMulti: 0
+  forceMulti: 400
+  horizontalMulti: 5
 --- !u!81 &386930922
 AudioListener:
   m_ObjectHideFlags: 0
@@ -132,6 +142,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1942872139860524143, guid: d0ae4fc88614d414db44978ef14a0cca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7610472300012094614, guid: d0ae4fc88614d414db44978ef14a0cca,
         type: 3}
       propertyPath: m_TagString
@@ -147,16 +162,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1253011282663533745, guid: d0ae4fc88614d414db44978ef14a0cca,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1253011282874566957, guid: d0ae4fc88614d414db44978ef14a0cca,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 1253011282400379756, guid: d0ae4fc88614d414db44978ef14a0cca,
         type: 3}
       propertyPath: m_TagString
@@ -168,11 +173,6 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1253011282325308137, guid: d0ae4fc88614d414db44978ef14a0cca,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1253011282063300734, guid: d0ae4fc88614d414db44978ef14a0cca,
         type: 3}
       propertyPath: m_TagString
       value: Player
@@ -502,15 +502,8 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2097464844150984426, guid: d0ae4fc88614d414db44978ef14a0cca, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0ae4fc88614d414db44978ef14a0cca, type: 3}
---- !u!1 &1012303096502802743 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1253011282036964944, guid: d0ae4fc88614d414db44978ef14a0cca,
-    type: 3}
-  m_PrefabInstance: {fileID: 2265305470506723175}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1012303097699784970 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1253011280908861037, guid: d0ae4fc88614d414db44978ef14a0cca,

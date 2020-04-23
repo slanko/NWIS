@@ -6,7 +6,7 @@ public class Checkpoint : MonoBehaviour
 {
     LayerMask layer = 1 << 9;
     public Transform checkPoint;
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(Check());
     }
