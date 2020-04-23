@@ -21,11 +21,13 @@ public class ShipControl : MonoBehaviour
         baseCamFOV = myCam.fieldOfView;
         raceState = GameObject.FindGameObjectWithTag("RaceState").GetComponent<RaceStateEvents>();
         raceState.beginRace.AddListener(RaceStart);
+        rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
     }
 
     public void RaceStart()
     {
         raceStarted = true;
+        rb.constraints = RigidbodyConstraints.None;
     }
     private void OnDestroy()
     {

@@ -6,7 +6,7 @@ public class DebugJoint : MonoBehaviour
 {
     public FixedJoint joint;
 }
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(DebugJoint))]
 public class DebugJointEditor : Editor
 {
@@ -25,3 +25,4 @@ public class DebugJointEditor : Editor
         EditorGUILayout.HelpBox("Connected Anchor: " +connectedAnchor, MessageType.Warning);
     }
 }
+#endif

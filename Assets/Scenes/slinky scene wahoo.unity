@@ -1077,6 +1077,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9074123474475909581, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_ConnectedMassScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1012303096502802736, guid: acc062a2da3a94e40836276e42f8790d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1152,15 +1157,35 @@ PrefabInstance:
       propertyPath: m_ConnectedMassScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9074123474475909581, guid: acc062a2da3a94e40836276e42f8790d,
-        type: 3}
-      propertyPath: m_ConnectedMassScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5904356677344543030, guid: acc062a2da3a94e40836276e42f8790d,
         type: 3}
       propertyPath: m_ConnectedMassScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393478906254466656, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7306323859015783915, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701380147605729262, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989176055087208974, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497968946421524384, guid: acc062a2da3a94e40836276e42f8790d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acc062a2da3a94e40836276e42f8790d, type: 3}

@@ -42,9 +42,10 @@ public class ResetPlayer : MonoBehaviour
             player.SetActive(false);
             GameObject des = Instantiate(destroyed, player.transform.position, player.transform.rotation);
             Rigidbody[] bits = des.GetComponentsInChildren<Rigidbody>();
-            foreach (Rigidbody r in bits)
+            int iterations = bits.Length;
+            for(int i =0;i<iterations;i++)
             {
-                r.velocity = playerRb.velocity;
+                bits[i].velocity = playerRb.velocity;
             }
             StartCoroutine(WaitToRespawn(checkpoint));
         }
@@ -57,10 +58,11 @@ public class ResetPlayer : MonoBehaviour
         SetParent(transform);
         Destroy(tempTransform.gameObject);
 
-        foreach (var body in bodies)
+        int iterations = bodies.Length;
+        for (int i = 0; i < iterations; i++)
         {
-            body.velocity = Vector3.zero;
-            body.angularVelocity = Vector3.zero;
+            bodies[i].velocity = Vector3.zero;
+            bodies[i].angularVelocity = Vector3.zero;
         }
         player.SetActive(true);
         for (int i = 0; i < floaters.Length; i++)
@@ -73,9 +75,9 @@ public class ResetPlayer : MonoBehaviour
     void SetParent(Transform parent)
     {
         player.transform.parent = parent;
-        foreach (GameObject g in floaters)
+        for (int i = 0; i < floaters.Length; i++)
         {
-            g.transform.parent = parent;
+            floaters[i].transform.parent = parent;
         }
     }
 }
