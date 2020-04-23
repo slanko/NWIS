@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipControl : MonoBehaviour
 {
+    Animator anim;
     public int playerNum;
     Rigidbody rb;
     public float accelSpeedBase, accelSpeedTweaked, turnSpeedBase, tweakedTurnSpeed, turnSpeedDecrease, minTurnSpeed, brakeDrag, xDragDiv, correctForce, controlHeight, baseCamFOV, downForce;
@@ -15,6 +16,7 @@ public class ShipControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         accelName = playerNum + "PAccelerate";
         horizontalName = playerNum + "PHorizontal";
@@ -43,14 +45,6 @@ public class ShipControl : MonoBehaviour
             }
             
         }
-        if (Input.GetAxis(accelName) < 0)
-        {
-            rb.drag = brakeDrag;
-        }
-        else
-        {
-            rb.drag = 1f;
-        }
 
         //changing x velocity to make it turn better
         var localVel = transform.InverseTransformDirection(rb.velocity);
@@ -67,7 +61,15 @@ public class ShipControl : MonoBehaviour
         {
             tweakedTurnSpeed = minTurnSpeed;
         }
-
+        if (Input.GetAxis(accelName) < 0)
+        {
+            rb.drag = brakeDrag * -Input.GetAxis(accelName);
+            tweakedTurnSpeed = (turnSpeedBase + Mathf.Pow(localVel.z * turnSpeedDecrease, 2) * -Input.GetAxis(accelName));
+        }
+        else
+        {
+            rb.drag = 1f;
+        }
         if (raceStarted == true)
         {
             rb.AddTorque(transform.up * (tweakedTurnSpeed * Input.GetAxis(horizontalName)));
@@ -79,6 +81,9 @@ public class ShipControl : MonoBehaviour
         
         //FOV bullshit
         myCam.fieldOfView = baseCamFOV + (localVel.z / 3f);
+
+        //airbrake animation stuff
+        anim.SetFloat("Airbrake", -Input.GetAxis(accelName));
 
 
 

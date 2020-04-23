@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chanceToSpawn: 10
+  weaponDispensed: 0
 --- !u!95 &1169030466
 Animator:
   serializedVersion: 3

@@ -8,11 +8,13 @@ public class weaponSystem : MonoBehaviour
     //this turned out to be way more of a whole UI system, sorry 'bout that
 
     ShipControl sc;
-    Animator padAnim;
+    Animator padAnim, Anim;
     public GameObject missile, mine, missileLocation, mineLocation;
     public int mineCount, missileCount, shieldCount, boostCount;
+    public GameObject shieldObject;
+    public bool shieldsEnabled;
     int randomNum;
-    string mineButton, missileButton;
+    string mineButton, missileButton, shieldButton, boostButton;
     GameObject instMissile;
     Quaternion missileRotation;
     public int health; 
@@ -20,14 +22,18 @@ public class weaponSystem : MonoBehaviour
     public GameObject healthPip1, healthPip2, healthPip3;
     public Slider speedometer;
     public Text speedText;
+    BoostJet boosty;
 
     // Start is called before the first frame update
     void Start()
     {
         sc = GetComponent<ShipControl>();
+        Anim = GetComponent<Animator>();
+        boosty = GetComponent<BoostJet>();
         mineButton = sc.playerNum + "PB";
         missileButton = sc.playerNum + "PX";
-
+        shieldButton = sc.playerNum + "PY";
+        boostButton = sc.playerNum + "PA";
     }
 
     // Update is called once per frame
@@ -36,10 +42,10 @@ public class weaponSystem : MonoBehaviour
         if(other.gameObject.tag == "weaponPad")
         {
             var wPadScript = other.GetComponent<weaponPadScript>();
-            if(wPadScript.weaponDispensed == false)
+            if (wPadScript.weaponDispensed == false)
             {
                 wPadScript.weaponDispensed = true;
-                randomNum = Random.Range(1, 3);
+                randomNum = Random.Range(1, 5);
                 if (randomNum == 1)
                 {
                     mineCount++;
@@ -47,6 +53,14 @@ public class weaponSystem : MonoBehaviour
                 if (randomNum == 2)
                 {
                     missileCount++;
+                }
+                if (randomNum == 3)
+                {
+                    shieldCount++;
+                }
+                if (randomNum == 4)
+                {
+                    boostCount++;
                 }
                 padAnim = other.gameObject.GetComponent<Animator>();
                 padAnim.SetTrigger("activate");
@@ -81,6 +95,35 @@ public class weaponSystem : MonoBehaviour
                 missileCount -= 1;
             }
         }
+        if (Input.GetButtonDown(shieldButton))
+        {
+            if(shieldCount > 0)
+            {
+                if (shieldsEnabled == false)
+                {
+                    Anim.SetTrigger("shieldActivate");
+                    shieldCount -= 1;
+                }
+            }
+        }
+        if (Input.GetButtonDown(boostButton))
+        {
+            if(boostCount > 0)
+            {
+                boostCount -= 1;
+                boosty.Trigger();
+            }
+        }
+        //update shield bool if shield is active
+        if(shieldObject.activeSelf == true)
+        {
+            shieldsEnabled = true;
+        }
+        else
+        {
+            shieldsEnabled = false;
+        }
+
 
         //update UI
         missileCounter.text = missileCount.ToString();
