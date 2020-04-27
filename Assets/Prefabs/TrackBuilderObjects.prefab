@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 392003894800484788}
   - component: {fileID: 392003894800484790}
   - component: {fileID: 392003894800484793}
+  - component: {fileID: 545889474}
   m_Layer: 0
   m_Name: Track Gen Cam
   m_TagString: MainCamera
@@ -486,6 +487,18 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &545889474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392003894800484786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25dd61617756dbc45b1d266383b34448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &392003894903253205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1153,7 @@ MonoBehaviour:
   - {fileID: 4770597163006015099, guid: 233aac7609105da4db2ab55c3d7f4b87, type: 3}
   layer:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 2615
 --- !u!1 &392003895843209430
 GameObject:
   m_ObjectHideFlags: 0
