@@ -45,10 +45,10 @@ public class TrackSection : ScriptableObject
         {
             TrackGenerator.height += heightChange;
             data.trackCollider.enabled = true;
-            GameObject tempObj = new GameObject();
+            /*GameObject tempObj = new GameObject();
             tempObj.transform.rotation = checkRotation;
             tempObj.transform.position = checkPoint;
-            g.GetComponent<HitboxVis>().b = new Box(tempObj.transform, checkSize);
+            g.GetComponent<HitboxVis>().b = new Box(tempObj.transform, checkSize);*/
 
 
             return end.gameObject;
