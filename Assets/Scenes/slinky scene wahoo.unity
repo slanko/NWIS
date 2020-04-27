@@ -3714,7 +3714,107 @@ PrefabInstance:
     - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
         type: 3}
       propertyPath: totalSections
-      value: 50
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[3].time
+      value: 0.4295919
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[3].value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[4].time
+      value: 0.56498575
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[4].value
+      value: 1.0131347
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[2].time
+      value: 0.2481134
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[2].value
+      value: 0.35742086
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[2].inSlope
+      value: -0.006804849
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[2].outSlope
+      value: -0.006804849
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[2].outWeight
+      value: 0.15679565
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[3].inSlope
+      value: -0.008588453
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[3].outSlope
+      value: -0.008588453
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[3].inWeight
+      value: 0.43893868
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[3].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[1].value
+      value: 0.1363133
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[1].time
+      value: 0.06152813
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[6].time
+      value: 0.88391113
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[7].inSlope
+      value: -2.4358008
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[7].outSlope
+      value: -2.4358008
+      objectReference: {fileID: 0}
+    - target: {fileID: 392003894766432717, guid: 27cc3973a9622f84da4e24fb9916cdcb,
+        type: 3}
+      propertyPath: difficulty.m_Curve.Array.data[6].value
+      value: 0.2741939
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cc3973a9622f84da4e24fb9916cdcb, type: 3}
