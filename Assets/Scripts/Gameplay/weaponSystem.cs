@@ -132,8 +132,8 @@ public class weaponSystem : MonoBehaviour
         mineCounter.text = mineCount.ToString();
         shieldCounter.text = shieldCount.ToString();
         boostCounter.text = boostCount.ToString();
-        speedometer.value = sc.localVelocity.z;
-        speedText.text = sc.localVelocity.z.ToString("F0");
+        speedometer.value = sc.localVelocity.z * 3.6f;
+        speedText.text = (sc.localVelocity.z * 3.6f).ToString("F0");
 
         if(health == 3)
         {
