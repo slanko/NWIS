@@ -7,6 +7,7 @@ using UnityEngine;
 public class OutOfBounds : MonoBehaviour
 {
     Checkpoint checkpoint;
+    const float resetTime = 2;
     
     private void Start()
     {
@@ -16,7 +17,7 @@ public class OutOfBounds : MonoBehaviour
     {
         if (collision.collider.tag == "Ground"|| collision.collider.tag == "Building")
         {
-            GetComponentInParent<ResetPlayer>().Reset(checkpoint);
+            GetComponentInParent<ResetPlayer>().Reset(checkpoint,resetTime);
         }
     }
 }

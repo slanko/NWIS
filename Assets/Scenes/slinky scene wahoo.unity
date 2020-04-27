@@ -2588,6 +2588,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3752043940553141259, guid: 038122a781dc5434487635c95fee073e,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerUpGrate (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 165131035859050008, guid: 038122a781dc5434487635c95fee073e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2642,11 +2647,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3752043940553141259, guid: 038122a781dc5434487635c95fee073e,
-        type: 3}
-      propertyPath: m_Name
-      value: PowerUpGrate (1)
       objectReference: {fileID: 0}
     - target: {fileID: 456663362, guid: 038122a781dc5434487635c95fee073e, type: 3}
       propertyPath: m_RootOrder
@@ -3154,6 +3154,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3752043940553141259, guid: 038122a781dc5434487635c95fee073e,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerUpGrate
+      objectReference: {fileID: 0}
     - target: {fileID: 165131035859050008, guid: 038122a781dc5434487635c95fee073e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3208,11 +3213,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3752043940553141259, guid: 038122a781dc5434487635c95fee073e,
-        type: 3}
-      propertyPath: m_Name
-      value: PowerUpGrate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038122a781dc5434487635c95fee073e, type: 3}

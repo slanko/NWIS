@@ -74,7 +74,9 @@ public class weaponSystem : MonoBehaviour
     {
         if(health <= 0)
         {
-            gameObject.SetActive(false);
+            Checkpoint checkpoint = GetComponent<Checkpoint>();
+            GetComponentInParent<ResetPlayer>().Reset(checkpoint,4);
+            ResetHealth();
         }
 
         if (Input.GetButtonDown(mineButton))
@@ -151,5 +153,13 @@ public class weaponSystem : MonoBehaviour
         {
             healthPip1.SetActive(false);
         }
+    }
+
+    void ResetHealth()
+    {
+        health = 3;
+        healthPip3.SetActive(true);
+        healthPip2.SetActive(true);
+        healthPip1.SetActive(true);
     }
 }

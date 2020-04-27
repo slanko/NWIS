@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6891553389894111156, guid: 640bfd57d56f9874fbf8ef20414a2378,
         type: 3}
       propertyPath: m_Name
-      value: P1 Destroyed Ship Variant 1
+      value: P1 Destroyed Ship
       objectReference: {fileID: 0}
     - target: {fileID: 7636115485025762727, guid: 640bfd57d56f9874fbf8ef20414a2378,
         type: 3}
@@ -66,11 +66,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6758841416861784775, guid: 640bfd57d56f9874fbf8ef20414a2378,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 640bfd57d56f9874fbf8ef20414a2378, type: 3}

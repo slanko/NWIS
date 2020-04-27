@@ -136,7 +136,7 @@ public class TrackGenerator : MonoBehaviour
             placedSections.RemoveAt(placedSections.Count - 1);
             GameObject old = buildPoints[buildPoints.Count - 1];
             buildPoints.Remove(old);
-            Destroy(old.transform.parent.gameObject);
+            Destroy(old.transform.parent.parent.gameObject);
             pieceCount++;
             origin = buildPoints[buildPoints.Count - 1];
         }

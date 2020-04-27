@@ -26,7 +26,7 @@ public class ResetPlayer : MonoBehaviour
             floaters[i].GetComponent<FixedJoint>().autoConfigureConnectedAnchor = false;
         }
     }
-    public void Reset(Checkpoint checkpoint)
+    public void Reset(Checkpoint checkpoint, float time)
     {
         if (canReset)
         {
@@ -47,12 +47,12 @@ public class ResetPlayer : MonoBehaviour
             {
                 bits[i].velocity = playerRb.velocity;
             }
-            StartCoroutine(WaitToRespawn(checkpoint));
+            StartCoroutine(WaitToRespawn(checkpoint,time));
         }
     }
-    public IEnumerator WaitToRespawn(Checkpoint checkpoint)
+    public IEnumerator WaitToRespawn(Checkpoint checkpoint, float time)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(time);
         tempTransform.position = checkpoint.checkPoint.position + new Vector3(0, spawnHeight, 0);
         tempTransform.rotation = checkpoint.checkPoint.rotation;
         SetParent(transform);
