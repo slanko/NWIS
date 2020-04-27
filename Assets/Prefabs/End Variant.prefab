@@ -31,6 +31,9 @@ MonoBehaviour:
   buildPoints:
   - {fileID: 5537762921360745647}
   pillar: {fileID: -927199367670048503, guid: 2aa329a2d4b501440a77b99f6b891575, type: 3}
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!64 &6260052406249378253
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -598,6 +601,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 8d3ebac11306ea744b8ec0e70f64119e,
+        type: 3}
+      propertyPath: m_Name
+      value: End Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8d3ebac11306ea744b8ec0e70f64119e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890935388186879994, guid: 8d3ebac11306ea744b8ec0e70f64119e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545805171377572875, guid: 8d3ebac11306ea744b8ec0e70f64119e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272201399377395766, guid: 8d3ebac11306ea744b8ec0e70f64119e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4996687211566984633, guid: 8d3ebac11306ea744b8ec0e70f64119e,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -673,31 +701,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8d3ebac11306ea744b8ec0e70f64119e,
-        type: 3}
-      propertyPath: m_Name
-      value: End Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8d3ebac11306ea744b8ec0e70f64119e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1272201399377395766, guid: 8d3ebac11306ea744b8ec0e70f64119e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3545805171377572875, guid: 8d3ebac11306ea744b8ec0e70f64119e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5890935388186879994, guid: 8d3ebac11306ea744b8ec0e70f64119e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 5539222164008697594, guid: 8d3ebac11306ea744b8ec0e70f64119e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -742,6 +745,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4730973625138309779}
     m_Modifications:
+    - target: {fileID: 6841887858336398318, guid: e039bbd2e0a851544aeae2c2622c315f,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneryPoints
+      objectReference: {fileID: 0}
     - target: {fileID: 1970029891815123697, guid: e039bbd2e0a851544aeae2c2622c315f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -797,11 +805,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6841887858336398318, guid: e039bbd2e0a851544aeae2c2622c315f,
-        type: 3}
-      propertyPath: m_Name
-      value: SceneryPoints
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e039bbd2e0a851544aeae2c2622c315f, type: 3}
 --- !u!4 &5011235268113786935 stripped
@@ -817,6 +820,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4730973625138309779}
     m_Modifications:
+    - target: {fileID: 5554455689802034000, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554455689802034000, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4569525095303353316, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -881,16 +894,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 30.5133
-      objectReference: {fileID: 0}
-    - target: {fileID: 5554455689802034000, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 5554455689802034000, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7fd22ec7d7c7c41b8fd68f7ae7dbe2, type: 3}

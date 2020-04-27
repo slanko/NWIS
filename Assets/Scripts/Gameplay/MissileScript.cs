@@ -36,10 +36,13 @@ public class MissileScript : MonoBehaviour
         {
             var playerRB = other.gameObject.GetComponent<Rigidbody>();
             var wS = other.gameObject.GetComponent<weaponSystem>();
-            playerRB.AddExplosionForce(explosionPower, rb.transform.position, explosionRadius, 1f, ForceMode.Impulse);
             if(damageDealt == false)
             {
-                wS.health = wS.health - 1;
+                if (wS.shieldsEnabled == false)
+                {
+                    playerRB.AddExplosionForce(explosionPower, rb.transform.position, explosionRadius, 1f, ForceMode.Impulse);
+                    wS.health = wS.health - 1;
+                }
                 damageDealt = true;
             }
         }

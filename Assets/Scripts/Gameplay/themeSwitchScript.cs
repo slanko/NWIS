@@ -10,6 +10,11 @@ public class themeSwitchScript : MonoBehaviour
     RenderTexture targetTexture;
     public Cubemap darkSky, lightSky;
 
+    private void Start()
+    {
+        DynamicGI.UpdateEnvironment();
+    }
+
     // Update is called once per frame
     void Update()
     {

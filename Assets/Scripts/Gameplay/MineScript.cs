@@ -18,10 +18,13 @@ public class MineScript : MonoBehaviour
         {
             rb = other.gameObject.GetComponent<Rigidbody>();
             wS = other.gameObject.GetComponent<weaponSystem>();
-            rb.AddExplosionForce(explosionPower, transform.position, explosionRadius, 1f, ForceMode.Impulse);
             if (damageDealt == false)
             {
-                wS.health = wS.health - 1;
+                if(wS.shieldsEnabled == false)
+                {
+                    rb.AddExplosionForce(explosionPower, transform.position, explosionRadius, 1f, ForceMode.Impulse);
+                    wS.health = wS.health - 1;
+                }
                 damageDealt = true;
             }
             Instantiate(explosion, transform.position, transform.rotation);
