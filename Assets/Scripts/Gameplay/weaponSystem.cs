@@ -45,22 +45,32 @@ public class weaponSystem : MonoBehaviour
             if (wPadScript.weaponDispensed == false)
             {
                 wPadScript.weaponDispensed = true;
-                randomNum = Random.Range(1, 5);
-                if (randomNum == 1)
+                if (wPadScript.healthPad == false)
                 {
-                    mineCount++;
+                    randomNum = Random.Range(1, 5);
+                    if (randomNum == 1)
+                    {
+                        mineCount++;
+                    }
+                    if (randomNum == 2)
+                    {
+                        missileCount++;
+                    }
+                    if (randomNum == 3)
+                    {
+                        shieldCount++;
+                    }
+                    if (randomNum == 4)
+                    {
+                        boostCount++;
+                    }
                 }
-                if (randomNum == 2)
+                else
                 {
-                    missileCount++;
-                }
-                if (randomNum == 3)
-                {
-                    shieldCount++;
-                }
-                if (randomNum == 4)
-                {
-                    boostCount++;
+                    if(health < 3)
+                    {
+                        health++;
+                    }
                 }
                 padAnim = other.gameObject.GetComponent<Animator>();
                 padAnim.SetTrigger("activate");
