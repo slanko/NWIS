@@ -140,6 +140,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3292653309703317687, guid: d31ebe9417fa4704e9cc618c5f35bf00,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d31ebe9417fa4704e9cc618c5f35bf00, type: 3}
 --- !u!1 &9058046123066100737 stripped

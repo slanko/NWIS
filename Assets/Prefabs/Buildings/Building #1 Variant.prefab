@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &5797766328302145204
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2827735740947776883}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -3298800115395149385, guid: 63f3a31c4937a85468473bea7428170a, type: 3}
 --- !u!114 &403425356945202347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067795483385560254, guid: 63f3a31c4937a85468473bea7428170a,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 1141736492642354372, guid: 63f3a31c4937a85468473bea7428170a,
         type: 3}

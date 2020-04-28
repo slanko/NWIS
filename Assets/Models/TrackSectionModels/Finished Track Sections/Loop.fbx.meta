@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc7a2125989f5fa4d9382c9b8624b4dd
+guid: 1df7e39fc5e5fdf45b1e64ca9778b220
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,33 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Base#7
-    second: {fileID: 2100000, guid: 5ca8d7406d8bb874a88abdf1ab9611b7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Door
-    second: {fileID: 2100000, guid: 5d9ad8a99e3c294429e0e8f2237d85e6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Prop#1
-    second: {fileID: 2100000, guid: c6a6ee59870b7714bb87c225911d94a5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Support#1
-    second: {fileID: 2100000, guid: 3e0e0d882b9b50d4dadc5a82ac9334f9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Windows#1
-    second: {fileID: 2100000, guid: c5de5d4918f6680458b9b0f74c581d32, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Windows#2
-    second: {fileID: 2100000, guid: 36c1ccce461e4f74490c6c87b1b3d9c0, type: 2}
+      name: Track
+    second: {fileID: 2100000, guid: 713bb83e171ecd143990647e188f63b3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -61,7 +36,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -74,7 +49,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3802407084506584354, guid: 15bc42c1a6150204ab646501a04cd743,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.17
+      objectReference: {fileID: 0}
     - target: {fileID: 1141736492642354372, guid: 15bc42c1a6150204ab646501a04cd743,
         type: 3}
       propertyPath: m_Enabled

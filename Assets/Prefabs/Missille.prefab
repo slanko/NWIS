@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7791156742087789847}
   - component: {fileID: 7791156742087789846}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7791156742849790704}
   - component: {fileID: 7791156742849790719}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,6 +433,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: JetFlamesSubtle 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.33742255
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
+        type: 3}
+      propertyPath: ShapeModule.angle
+      value: 1.99
+      objectReference: {fileID: 0}
     - target: {fileID: 7426650691979744960, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,41 +522,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
-        type: 3}
-      propertyPath: ShapeModule.m_Rotation.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.7735849
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.33742255
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426650691979744961, guid: 4d15cad7399e3294c9d9a0823aeba9f9,
-        type: 3}
-      propertyPath: ShapeModule.angle
-      value: 1.99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d15cad7399e3294c9d9a0823aeba9f9, type: 3}
