@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplosionScript : MonoBehaviour
 {
-    public GameObject particlez; 
+    public GameObject particlez;
 
     public void DestroyMe()
     {
