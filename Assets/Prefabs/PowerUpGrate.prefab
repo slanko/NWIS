@@ -383,8 +383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bee8d8e5231c74495972555ef350f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToSpawn: 10
+  chanceToSpawn: 25
+  chanceToBeHealth: 10
   weaponDispensed: 0
+  healthPad: 0
 --- !u!65 &1257404616197772729
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -518,7 +520,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 1, g: 0.37706545, b: 0.24056602, a: 1}
+  m_Color: {r: 1, g: 0.3770654, b: 0.240566, a: 1}
   m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30

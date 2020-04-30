@@ -9,6 +9,7 @@ public class weaponSystem : MonoBehaviour
 
     ShipControl sc;
     Animator padAnim, Anim;
+    public Animator weaponPanelAnim;
     public GameObject missile, mine, missileLocation, mineLocation;
     public int mineCount, missileCount, shieldCount, boostCount;
     public GameObject shieldObject;
@@ -34,6 +35,7 @@ public class weaponSystem : MonoBehaviour
         missileButton = sc.playerNum + "PX";
         shieldButton = sc.playerNum + "PY";
         boostButton = sc.playerNum + "PA";
+
     }
 
     // Update is called once per frame
@@ -45,28 +47,41 @@ public class weaponSystem : MonoBehaviour
             if (wPadScript.weaponDispensed == false)
             {
                 wPadScript.weaponDispensed = true;
-                randomNum = Random.Range(1, 5);
-                if (randomNum == 1)
+                if (wPadScript.healthPad == false)
                 {
-                    mineCount++;
+                    randomNum = Random.Range(1, 5);
+                    if (randomNum == 1)
+                    {
+                        mineCount++;
+                        weaponPanelAnim.SetTrigger("mineGet");
+                    }
+                    if (randomNum == 2)
+                    {
+                        missileCount++;
+                        weaponPanelAnim.SetTrigger("missileGet");
+                    }
+                    if (randomNum == 3)
+                    {
+                        shieldCount++;
+                        weaponPanelAnim.SetTrigger("shieldGet");
+                    }
+                    if (randomNum == 4)
+                    {
+                        boostCount++;
+                        weaponPanelAnim.SetTrigger("boostGet");
+                    }
                 }
-                if (randomNum == 2)
+                else
                 {
-                    missileCount++;
-                }
-                if (randomNum == 3)
-                {
-                    shieldCount++;
-                }
-                if (randomNum == 4)
-                {
-                    boostCount++;
+                    if(health < 3)
+                    {
+                        health++;
+                    }
                 }
                 padAnim = other.gameObject.GetComponent<Animator>();
                 padAnim.SetTrigger("activate");
                 wPadScript = null;
             }
-
         }
     }
 

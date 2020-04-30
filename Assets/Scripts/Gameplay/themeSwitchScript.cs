@@ -13,6 +13,8 @@ public class themeSwitchScript : MonoBehaviour
     private void Start()
     {
         DynamicGI.UpdateEnvironment();
+        windowLights1.DisableKeyword("_EMISSION");
+        windowLights2.DisableKeyword("_EMISSION");
     }
 
     // Update is called once per frame
