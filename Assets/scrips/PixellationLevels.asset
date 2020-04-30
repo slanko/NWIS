@@ -16,6 +16,3 @@ MonoBehaviour:
   - {x: 853, y: 480}
   - {x: 569, y: 320}
   - {x: 398, y: 224}
-  textures:
-  - {fileID: 8400000, guid: c4920805be2e1504d9d705f2993367ef, type: 2}
-  - {fileID: 8400000, guid: 99bc6c95781815e469f8b4414936e75b, type: 2}

@@ -22,14 +22,17 @@ public class CullLightsAtDistance : MonoBehaviour
             yield return new WaitForSeconds(updateTime);
             int iterations = CameraTransforms.transforms.Count;
             bool shouldLight = false;
-            for(int i = 0; i < iterations; i++)
+            for (int i = 0; i < iterations; i++)
             {
-                if (Vector3.Distance(transform.position, CameraTransforms.transforms[i].position) < enableDistance)
+                if (transform != null)
                 {
-                    shouldLight = true;
+                    if (Vector3.Distance(transform.position, CameraTransforms.transforms[i].position) < enableDistance)
+                    {
+                        shouldLight = true;
+                    }
                 }
             }
-            lightSource.enabled = shouldLight;   
+            lightSource.enabled = shouldLight;
         }
     }
 }

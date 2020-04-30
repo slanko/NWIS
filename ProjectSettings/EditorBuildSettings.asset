@@ -12,12 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lawrence's Menu.unity
     guid: ea6db034534bc7945b45c0df07510e24
   - enabled: 1
-    path: Assets/Scenes/slinky scene wahoo.unity
-    guid: caebb56196d92134183b9f6f925e11ca
+    path: Assets/Scenes/Lawrences Modified Scene.unity
+    guid: d9021f942052dda4cbfeef39c1505fd6
   - enabled: 1
     path: Assets/Scenes/Results Screen.unity
     guid: 165818f3ba5eae54eb46e22e64a2439b
-  - enabled: 0
-    path: Assets/Scenes/Lawence's Test Scene.unity
-    guid: 4b92287a700af7246a55050235a219f3
   m_configObjects: {}

@@ -589,8 +589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f13f90f54a84d842bba455b207a97da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadDest: 2
-  level: 0
+  loadDest: 3
+  level: 1
   trigger: 2
   button: MenuAccept
 --- !u!114 &597612422

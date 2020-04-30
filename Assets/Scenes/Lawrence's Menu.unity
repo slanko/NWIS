@@ -709,6 +709,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!222 &1607264536
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062049409}
+  m_CullTransparentMesh: 0
 --- !u!1 &2062049409
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,8 +726,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2062049410}
-  - component: {fileID: 2062049412}
   - component: {fileID: 2062049411}
+  - component: {fileID: 1607264536}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -764,28 +772,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 59f795bd9db1ebd41ab1bbf3226692b1, type: 3}
-    m_FontSize: 120
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 120
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: NWIS
---- !u!222 &1607264536
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062049409}
-  m_CullTransparentMesh: 0
+  m_Sprite: {fileID: 21300000, guid: b6102ba55066fba4ca638dac482cdb8c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &1285349828923985014
 PrefabInstance:
   m_ObjectHideFlags: 0
