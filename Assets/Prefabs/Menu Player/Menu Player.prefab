@@ -113,7 +113,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233413066581013950}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &1233413067414090546
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7698980780664307791}
   - component: {fileID: 2100579152}
+  - component: {fileID: 3699313041969203224}
   m_Layer: 0
   m_Name: Menu Player
   m_TagString: Untagged
@@ -392,6 +393,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &3699313041969203224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3044992623903935462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f404f74aac65934b98fe24dd136c6f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4610228620223650877
 GameObject:
   m_ObjectHideFlags: 0

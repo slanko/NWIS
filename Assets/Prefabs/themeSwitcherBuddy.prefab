@@ -390,11 +390,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicTerrain
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,7 +398,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 81.7
+      value: 50.8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
         type: 3}
@@ -458,24 +453,13 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.7722023
+      value: 2.4697363
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.7722023
       objectReference: {fileID: 0}
-    - target: {fileID: 2635590120107280028, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 7629811779324647873, guid: 2131d9c7b6ef171458984dea6d730efa,
-        type: 3}
-    - target: {fileID: 3061514662589243326, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1be5f6796a1415844a015193ea907b11, type: 2}
     - target: {fileID: 6532373769670201727, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -506,6 +490,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7702056
       objectReference: {fileID: 0}
+    - target: {fileID: 2635590120107280028, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7629811779324647873, guid: 2131d9c7b6ef171458984dea6d730efa,
+        type: 3}
+    - target: {fileID: 3061514662589243326, guid: 63c3337e29ca59c409f9ef0f37dc6d4f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1be5f6796a1415844a015193ea907b11, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63c3337e29ca59c409f9ef0f37dc6d4f, type: 3}
 --- !u!4 &7300703636278109518 stripped

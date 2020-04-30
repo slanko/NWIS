@@ -9,6 +9,7 @@ public class weaponSystem : MonoBehaviour
 
     ShipControl sc;
     Animator padAnim, Anim;
+    public Animator weaponPanelAnim;
     public GameObject missile, mine, missileLocation, mineLocation;
     public int mineCount, missileCount, shieldCount, boostCount;
     public GameObject shieldObject;
@@ -34,6 +35,7 @@ public class weaponSystem : MonoBehaviour
         missileButton = sc.playerNum + "PX";
         shieldButton = sc.playerNum + "PY";
         boostButton = sc.playerNum + "PA";
+
     }
 
     // Update is called once per frame
@@ -51,18 +53,22 @@ public class weaponSystem : MonoBehaviour
                     if (randomNum == 1)
                     {
                         mineCount++;
+                        weaponPanelAnim.SetTrigger("mineGet");
                     }
                     if (randomNum == 2)
                     {
                         missileCount++;
+                        weaponPanelAnim.SetTrigger("missileGet");
                     }
                     if (randomNum == 3)
                     {
                         shieldCount++;
+                        weaponPanelAnim.SetTrigger("shieldGet");
                     }
                     if (randomNum == 4)
                     {
                         boostCount++;
+                        weaponPanelAnim.SetTrigger("boostGet");
                     }
                 }
                 else
@@ -76,7 +82,6 @@ public class weaponSystem : MonoBehaviour
                 padAnim.SetTrigger("activate");
                 wPadScript = null;
             }
-
         }
     }
 
