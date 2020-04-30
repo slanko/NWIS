@@ -15,11 +15,11 @@ public class FinishLine : MonoBehaviour
         if (other.tag == "Player")
         {
             Player thisPlayer = other.gameObject.GetComponentInParent<StorePlayer>().thisPlayer;
-            Debug.LogWarning("Hit player" + thisPlayer.number);
 
             if(!Array.Exists(Placings.placings, element => element == thisPlayer))
             {
-                Debug.LogWarning("Player not yet in results");
+                thisPlayer.finished = true;
+                thisPlayer.inGameShip.GetComponent<DisablePlayer>().Activate();
                 Placings.placings[playersFinished] = thisPlayer;
                 playersFinished++;
                 thisPlayer.position = playersFinished;

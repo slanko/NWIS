@@ -17,7 +17,6 @@ public class timer : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
-
     }
 
     // Update is called once per frame

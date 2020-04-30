@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Transitions : MonoBehaviour
 {
     RaceStateEvents stateEvents;
+    [SerializeField] LoadLevel loadLevel;
+    [SerializeField] Animator anim;
+    LoadDestination targetLevel;
     private void Start()
     {
         stateEvents = GameObject.FindGameObjectWithTag("RaceState").GetComponent<RaceStateEvents>();
@@ -23,4 +26,13 @@ public class Transitions : MonoBehaviour
        if(stateEvents.beginCountdown.GetPersistentEventCount()>0)
            stateEvents.beginCountdown.Invoke();
     }
+    public void TransitionOut(LoadDestination dest)
+    {
+        targetLevel = dest;
+        anim.SetTrigger("Out");
+    }
+    public void Load()
+    {
+        loadLevel.Activate(targetLevel); 
+    }  
 }

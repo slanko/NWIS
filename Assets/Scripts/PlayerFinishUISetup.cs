@@ -20,7 +20,8 @@ public class PlayerFinishUISetup : MonoBehaviour
     {
         screens[player.number - 1].gameObject.SetActive(true);
         screens[player.number - 1].SetImage(positions[player.position-1]);
-        if(FinishLine.playersFinished== PlayerData.players.Count)
+        screens[player.number - 1].SetTime(player.time);
+        if (FinishLine.playersFinished== PlayerData.players.Count)
         {
             finalScreen.SetActive(true);
         }

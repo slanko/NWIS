@@ -16,8 +16,8 @@ public class PitchBySpeed : MonoBehaviour
         lastSpeed = rb.velocity.magnitude;
 
         float input = rb.velocity.magnitude + (speedChange * speedChangeMulti);
-        float pitch = Mathf.Lerp(0.4f, 1.6f, input / refSpeed);
-        float vol = Mathf.Lerp(0f, 0.3f, input / 50);
+        float pitch = Mathf.Lerp(0.6f, 1.6f, input / refSpeed);
+        float vol = Mathf.Lerp(0.01f, 0.3f, input / 50);
         foreach (AudioSource a in audioSource)
         {
             a.pitch = Mathf.Lerp(a.pitch,pitch,0.2f);

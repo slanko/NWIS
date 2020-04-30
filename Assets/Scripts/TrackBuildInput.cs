@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class TrackBuildInput : MonoBehaviour
 {
     [SerializeField] RaceStateEvents events;
+    [SerializeField] Transitions transition;
+    [SerializeField] LoadLevel loadLevel;
     bool generationComplete = false;
     private void Start()
     {
@@ -21,6 +23,8 @@ public class TrackBuildInput : MonoBehaviour
             Regen();
         if (Input.GetButton("MenuAccept"))
             Race();
+        if (Input.GetButton("MenuBack"))
+            transition.TransitionOut(LoadDestination.prev);
     }
     void GenDone()
     {
@@ -33,6 +37,6 @@ public class TrackBuildInput : MonoBehaviour
     }
     void Regen()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        transition.TransitionOut(LoadDestination.same);
     }
 }

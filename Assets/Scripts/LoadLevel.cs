@@ -12,6 +12,7 @@ public enum LoadTrigger
 public enum LoadDestination
 {
     next,
+    same,
     prev,
     number
 }
@@ -24,14 +25,29 @@ public class LoadLevel : MonoBehaviour
     [HideInInspector] public string button;
     public void Activate()
     {
+        LoadByDest(loadDest);
+    }
+    public void Activate(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+    public void Activate(LoadDestination dest)
+    {
+        LoadByDest(dest);
+    }
+    void LoadByDest(LoadDestination dest)
+    {
         int levelToGoTo = 0;
-        switch (loadDest)
+        switch (dest)
         {
             case LoadDestination.next:
                 levelToGoTo = SceneManager.GetActiveScene().buildIndex + 1;
                 break;
             case LoadDestination.prev:
                 levelToGoTo = SceneManager.GetActiveScene().buildIndex - 1;
+                break;
+            case LoadDestination.same:
+                levelToGoTo = SceneManager.GetActiveScene().buildIndex;
                 break;
             case LoadDestination.number:
                 levelToGoTo = level;
@@ -48,7 +64,10 @@ public class LoadLevel : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown(button)&&trigger==LoadTrigger.buttonPress)
-            Activate();
+        if (trigger == LoadTrigger.buttonPress)
+        {
+            if (Input.GetButtonDown(button))
+                Activate();
+        }
     }
 }
