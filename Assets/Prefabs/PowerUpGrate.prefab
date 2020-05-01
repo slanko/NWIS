@@ -582,8 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fcffef72ce4ef43af5ccc419aef017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 11400000, guid: 30e8016c4a866db4da064b355b50e670, type: 2}
-  enableDistance: 80
+  enableDistance: 160
 --- !u!1001 &5820061071979847880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -591,11 +590,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 165131035859050008}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 0b89892b90febf445b3d8a8f324eafa3,
-        type: 3}
-      propertyPath: m_Name
-      value: PowerUpEmmissive
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0b89892b90febf445b3d8a8f324eafa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -660,6 +654,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.57206
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0b89892b90febf445b3d8a8f324eafa3,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerUpEmmissive
       objectReference: {fileID: 0}
     - target: {fileID: 2471735130843699033, guid: 0b89892b90febf445b3d8a8f324eafa3,
         type: 3}
